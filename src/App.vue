@@ -14,11 +14,16 @@ export default {
 </script>
 
 <template>
-  <div class="container p-5">
+  <div class="container p-5 d-flex justify-content-around">
     <h1>{{ message  }}</h1>
-
+    <nav class="d-flex gap-3 align-items-center">
+          <RouterLink :class="$route.fullPath === '/' ? 'text-warning' : ''" :to="{ name: 'home' }">Home</RouterLink>
+          <RouterLink :class="$route.fullPath === '/contact' ? 'text-warning' : ''" :to="{ name: 'contact'}">Contact</RouterLink>
+          <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-warning' : ''" :to="{ name: 'portfolio'}">Portfolio</RouterLink>
+        </nav>
   </div>
 <AppMain />
+<RouterView/>
 </template>
 
 <style>
