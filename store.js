@@ -7,13 +7,14 @@ const store = reactive({
 
     data: {
         projects: [],
+        // project:[],
 
         octokit: new Octokit({
             auth: import.meta.env.VITE_API_KEY
         }),
 
-        fetchdata(page) {
-            this.octokit.request(`GET /user/repos?page=${page} `, {
+        fetchdata(page, per_page) {
+            this.octokit.request(`GET /user/repos?page=${page}&per_page=${per_page}`, {
                 // owner: 'pietrocruciata',
                 // repo: 'laravel-api',
                 headers: {
@@ -22,8 +23,9 @@ const store = reactive({
 
             }).then((res) => {
 
-                console.log(res)
+              console.log(res);
                 this.projects = res.data
+                console.log(this.projects);
 
 
 
@@ -31,10 +33,10 @@ const store = reactive({
             // console.log(this.projects.data.name);
 
         },
-        // singolarProject(name) {
+        // singolarProject() {
         //     this.octokit.request(`GET /repos/{owner}/{repo}`, {
         //         owner: 'pietrocruciata',
-        //         repo: `${name}`,
+        //         repo: 'db-first',
         //         headers: {
         //             'X-GitHub-Api-Version': '2022-11-28'
         //         }
@@ -42,7 +44,9 @@ const store = reactive({
         //     }).then((res) => {
 
         //         console.log(res)
-        //         this.projects = res.data
+        //         this.project = res.data
+        //         console.log(this.project);
+               
 
 
 

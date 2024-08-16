@@ -24,30 +24,31 @@ import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
 import store from '../../store.js';
 
+
 export default {
   components: {
-    ProjectCard
+    ProjectCard,
+    
   },
   data() {
     return {
       store,
-      lastPage: 2,
+      lastPage: 4,
       currentPage: 1
-
-
     }
   },
   mounted() {
-    this.store.data.fetchdata(1)
+    this.store.data.fetchdata(1,15)
   },
   methods: {
 
     changePage(n) {
       if (n === this.currentPage) return
       this.currentPage = n
-      this.store.data.fetchdata(n)
+      this.store.data.fetchdata(n,15)
     },
-  }
+  },
+
 
 }
 </script>
