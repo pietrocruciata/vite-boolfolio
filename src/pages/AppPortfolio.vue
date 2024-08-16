@@ -10,6 +10,7 @@
           <div :class="n === currentPage ? 'bg-warning' : 'bg-primary'" role="button" class=" rounded-circle p-2 pe-aut"
             @click="changePage(n)" v-for="n in lastPage" :key="n">
             {{ n }}
+            bla bla
           </div>
         </div>
       </div>
