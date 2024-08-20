@@ -5,6 +5,9 @@
     <div>
         {{ store.data.projectsingle.name }}
     </div>
+    <div v-for="language in store.data.projectsingle.all_languages">
+        {{ language}}
+    </div>
 </template>
 
 <script>

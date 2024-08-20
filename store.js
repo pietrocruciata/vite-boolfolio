@@ -12,6 +12,7 @@ const store = reactive({
         image: [],
         projectsingle:'',
 
+
         async fetchdata(page, per_page) {
             await store.octokit.request(`GET /user/repos?page=${page}&per_page=${per_page}`, {
                 // owner: 'pietrocruciata',
@@ -24,7 +25,7 @@ const store = reactive({
 
                 // console.log(res);
                 this.projects = res.data
-                // console.log(this.projects);
+                console.log(this.projects);
              })
             //  .then(() => {
 
@@ -61,7 +62,15 @@ const store = reactive({
 
                 // console.log(res);
                 this.projectsingle = res.data
-                // console.log(this.projectsingle);
+                
+            }).then(() =>{
+                store.octokit.request(`GET /repos/${this.projects[i].full_name.split('/')[0]}/${this.projects[i].name}/languages`).then((res)=>{
+                this.projectsingle['all_languages']= Object.keys(res.data)
+
+                console.log(this.projectsingle);
+                
+                })
+
             })
         }
 
