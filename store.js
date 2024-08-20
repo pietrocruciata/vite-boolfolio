@@ -10,9 +10,10 @@ const store = reactive({
     data: {
         projects: [],
         image: [],
-      
-        fetchdata(page, per_page) {
-           store.octokit.request(`GET /user/repos?page=${page}&per_page=${per_page}`, {
+        projectsingle:'',
+
+        async fetchdata(page, per_page) {
+            await store.octokit.request(`GET /user/repos?page=${page}&per_page=${per_page}`, {
                 // owner: 'pietrocruciata',
                 // repo: 'laravel-api',
                 headers: {
@@ -24,28 +25,45 @@ const store = reactive({
                 // console.log(res);
                 this.projects = res.data
                 // console.log(this.projects);
-            }).then(() => {
-                
-                for (let i = 0; i < this.projects.length; i++) {
-                    store.octokit.request(`GET /repos/pietrocruciata/${this.projects[i].name}/contents/${this.projects[i].name}.png`, {
-                        // owner: 'pietrocruciata',
-                        // repo: 'laravel-api',
-                        headers: {
-                            'X-GitHub-Api-Version': '2022-11-28'
-                        }
+             })
+            //  .then(() => {
 
-                    }).then((res) => {
-                        console.log(res);
-                        
-                        this.projects[i]['image'] = res.data.download_url
-                        console.log( this.projects);
-                        
-                    })
-                }
-            })
+            //     for (let i = 0; i < this.projects.length; i++) {
+            //         store.octokit.request(`GET /repos/pietrocruciata/${this.projects[i].name}/contents/${this.projects[i].name}.png`, {
+            //             // owner: 'pietrocruciata',
+            //             // repo: 'laravel-api',
+            //             headers: {
+            //                 'X-GitHub-Api-Version': '2022-11-28'
+            //             }
+
+            //         }).then((res) => {
+            //             console.log(res);
+
+            //             this.projects[i]['image'] = res.data.download_url
+            //             console.log(this.projects);
+
+            //         })
+            //     }
+            // })
 
 
         },
+
+        async fetchproject(i) {
+            await store.octokit.request(`GET /repositories/${this.projects[i].id}`, {
+                // owner: 'pietrocruciata',
+                // repo: 'laravel-api',
+                headers: {
+                    'X-GitHub-Api-Version': '2022-11-28'
+                }
+
+            }).then((res) => {
+
+                // console.log(res);
+                this.projectsingle = res.data
+                // console.log(this.projectsingle);
+            })
+        }
 
 
 

@@ -1,5 +1,7 @@
 <script>
-import AppMain from './components/AppMain.vue'
+import AppMain from './components/AppMain.vue';
+import store from '../store.js';
+
 
 export default {
   components: {
@@ -7,9 +9,12 @@ export default {
   },
   data() {
     return {
-
+      store
     }
-  }
+  },
+  mounted() {
+    this.store.data.fetchdata(1, 15)
+  },
 }
 </script>
 
@@ -17,21 +22,24 @@ export default {
   <header>
     <div class=" p-5 d-flex justify-content-around bg-header">
 
-<nav class="d-flex gap-3 align-items-center">
-  <RouterLink :class="$route.fullPath === '/' ? 'text-header' : 'c-white'" :to="{ name: 'home' }">Home</RouterLink>
-  <RouterLink :class="$route.fullPath === '/contact' ? 'text-header' : 'c-white'" :to="{ name: 'contact' }">Contatti
-  </RouterLink>
-  <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header' : 'c-white'" :to="{ name: 'portfolio' }">I Miei
-    Progetti
-  </RouterLink>
-</nav>
-</div>
+      <nav class="d-flex gap-3 align-items-center">
+        <RouterLink :class="$route.fullPath === '/' ? 'text-header' : 'c-white'" :to="{ name: 'home' }">Home
+        </RouterLink>
+        <RouterLink :class="$route.fullPath === '/contact' ? 'text-header' : 'c-white'" :to="{ name: 'contact' }">
+          Contatti
+        </RouterLink>
+        <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header' : 'c-white'" :to="{ name: 'portfolio' }">I
+          Miei
+          Progetti
+        </RouterLink>
+      </nav>
+    </div>
   </header>
-  
- <main>
-  <RouterView />
- </main>
-  
+
+  <main>
+    <RouterView />
+  </main>
+
   <footer>
 
   </footer>
@@ -45,11 +53,11 @@ export default {
   color: $yellow;
 }
 
-.bg-header{
+.bg-header {
   background-color: $blue;
 }
 
-.c-white{
+.c-white {
   color: white;
 }
 </style>

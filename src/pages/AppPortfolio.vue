@@ -2,7 +2,7 @@
   <div class="container ">
     <div class="row">
       <div class=" d-flex gap-4 flex-wrap justify-content-center">
-        <ProjectCard v-for="(project, i) in store.data.projects" :key="project.id" :item="project" />
+        <ProjectCard v-for="(project, i) in store.data.projects" :key="project.id" :item="project" :project="i" />
       </div>
 
       <div>
@@ -38,9 +38,7 @@ export default {
       currentPage: 1
     }
   },
-  mounted() {
-    this.store.data.fetchdata(1,15)
-  },
+
   methods: {
 
     changePage(n) {

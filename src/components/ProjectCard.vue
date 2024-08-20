@@ -1,7 +1,7 @@
 <template>
 
   <div class="card p-3 col-3">
-    <RouterLink :to="{ name: 'project', params: { id: item.name } }">
+    <RouterLink :to="{ name: 'project', params: { id: project } }">
       <div class="card-title text-warning">
         <img :src="item.image" alt="" >
         <strong>TITOLO:</strong>{{ item.name }}
@@ -29,7 +29,10 @@ export default {
 
   props: {
     item: {
-      type: Object
+      type: Object,
+    },
+    project:{
+      type: Number
     }
 
   },
