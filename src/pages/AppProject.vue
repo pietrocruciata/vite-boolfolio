@@ -6,7 +6,7 @@
         {{ store.data.projectsingle.name }}
     </div>
     <div v-for="language in store.data.projectsingle.all_languages">
-        {{ language}}
+        {{ language }}
     </div>
 </template>
 
@@ -33,7 +33,9 @@ export default {
 
     mounted() {
         this.store.data.fetchproject(this.$route.params.id)
-    }
+    },
+  
+
 }
 </script>
 

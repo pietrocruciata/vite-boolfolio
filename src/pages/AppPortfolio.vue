@@ -1,17 +1,16 @@
 <template>
-  <div class="container ">
+  <div class="container">
     <div class="row">
-      <div class=" d-flex gap-4 flex-wrap justify-content-center">
-        <ProjectCard v-for="(project, i) in store.data.projects" :key="project.id" :item="project" :project="i" />
-      </div>
+      <div class="d-flex justify-content-around">
+        <div @click="previousPage" :disabled="currentPage === 1" class="bg-blue-botton">indietro</div>
+        <span>Pagina {{ currentPage }} di {{ totalPages }}</span>
+        <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-blue-botton">avanti</div>
 
-      <div>
-        <div class="d-flex gap-3 justify-content-center my-2">
-          <div :class="n === currentPage ? 'bg-warning' : 'bg-primary'" role="button" class=" rounded-circle p-2 pe-aut"
-            @click="changePage(n)" v-for="n in lastPage" :key="n">
-            {{ n }}
-          </div>
-        </div>
+      </div>
+      <div class=" d-flex gap-4 flex-wrap justify-content-center">
+        <ProjectCard v-for="(project, i) in currentProjects" :key="project.id" :item="project" :project="i">
+          {{ project.name }}
+        </ProjectCard>
       </div>
 
     </div>
@@ -24,32 +23,53 @@ import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
 import store from '../../store.js';
 
-
 export default {
   components: {
-    ProjectCard,
-    
-    
+    ProjectCard
   },
   data() {
     return {
       store,
-      lastPage: 4,
-      currentPage: 1
+      projects: [],
+      currentPage: 1,
+      projectsPerPage: 15
+    };
+  },
+  computed: {
+    totalPages() {
+      return Math.ceil(this.store.data.projects.length / this.projectsPerPage);
+    },
+    currentProjects() {
+      const start = (this.currentPage - 1) * this.projectsPerPage;
+      const end = start + this.projectsPerPage;
+      return this.store.data.projects.slice(start, end);
+    }
+  },
+  methods: {
+
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
     }
   },
 
-  methods: {
-
-    changePage(n) {
-      if (n === this.currentPage) return
-      this.currentPage = n
-      this.store.data.fetchdata(n,15)
-    },
-  },
-
-
-}
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" >
+
+@use '../style/partials/palette' as *;
+@use '../style/general';
+
+.bg-blue-botton{
+  cursorpo;
+  background-color: $blue;
+  padding: 5px;
+}
+</style>

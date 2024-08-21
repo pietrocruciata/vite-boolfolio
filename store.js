@@ -10,23 +10,28 @@ const store = reactive({
     data: {
         projects: [],
         image: [],
-        projectsingle:'',
+        projectsingle: '',
 
 
-        async fetchdata(page, per_page) {
-            await store.octokit.request(`GET /user/repos?page=${page}&per_page=${per_page}`, {
-                // owner: 'pietrocruciata',
-                // repo: 'laravel-api',
-                headers: {
-                    'X-GitHub-Api-Version': '2022-11-28'
-                }
+        async fetchdata() {
 
-            }).then((res) => {
-
-                // console.log(res);
-                this.projects = res.data
-                console.log(this.projects);
-             })
+         
+                await store.octokit.request(`GET /user/repos?per_page=1000`, {
+                    headers: {
+                        'X-GitHub-Api-Version': '2022-11-28'
+                    }
+                }).then((res) =>{
+                    this.projects = res.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+                    console.log(this.projects); 
+              
+                });
+            
+            
+        
+               
+                
+        
+        
             //  .then(() => {
 
             //     for (let i = 0; i < this.projects.length; i++) {
@@ -62,13 +67,13 @@ const store = reactive({
 
                 // console.log(res);
                 this.projectsingle = res.data
-                
-            }).then(() =>{
-                store.octokit.request(`GET /repos/${this.projects[i].full_name.split('/')[0]}/${this.projects[i].name}/languages`).then((res)=>{
-                this.projectsingle['all_languages']= Object.keys(res.data)
 
-                console.log(this.projectsingle);
-                
+            }).then(() => {
+                store.octokit.request(`GET /repos/${this.projects[i].full_name.split('/')[0]}/${this.projects[i].name}/languages`).then((res) => {
+                    this.projectsingle['all_languages'] = Object.keys(res.data)
+
+                    console.log(this.projectsingle);
+
                 })
 
             })
