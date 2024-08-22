@@ -2,20 +2,21 @@
   <div class="container">
     <div class="row">
       <div class="d-flex justify-content-around">
-        <div @click="previousPage" :disabled="currentPage === 1" class="bg-blue-botton">indietro</div>
-        <span>Pagina {{ currentPage }} di {{ totalPages }}</span>
-        <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-blue-botton">avanti</div>
+        <div @click="previousPage" :disabled="currentPage === 1" class="bg-blue-botton m-3">indietro</div>
+        <span class="m-3">Pagina {{ currentPage }} di {{ totalPages }}</span>
+        <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-blue-botton m-3">avanti</div>
 
       </div>
+    </div>
+
+</div>
       <div class=" d-flex gap-4 flex-wrap justify-content-center">
         <ProjectCard v-for="(project, i) in currentProjects" :key="project.id" :item="project" :project="i">
           {{ project.name }}
         </ProjectCard>
       </div>
 
-    </div>
-
-  </div>
+    
 </template>
 
 <script>
@@ -57,19 +58,23 @@ export default {
       }
     }
   },
+ 
 
 };
 </script>
 
-<style lang="scss" >
-
+<style lang="scss">
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
-.bg-blue-botton{
-  
-  background-color: $blue;
-  padding: 5px;
+.bg-blue-botton {
+  border-radius: 20px;
+  background-color: #036F95;
+  padding: 10px;
   cursor: pointer;
+  color: white;
+  &:hover{
+   color: $yellow;
+  }
 }
 </style>

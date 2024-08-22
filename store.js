@@ -23,33 +23,26 @@ const store = reactive({
                 }).then((res) =>{
                     this.projects = res.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
                     console.log(this.projects);    
-                });
-            
-            
-        
-               
-                
-        
-        
-            //  .then(() => {
+                })
+             .then(() => {
 
-            //     for (let i = 0; i < this.projects.length; i++) {
-            //         store.octokit.request(`GET /repos/pietrocruciata/${this.projects[i].name}/contents/${this.projects[i].name}.png`, {
-            //             // owner: 'pietrocruciata',
-            //             // repo: 'laravel-api',
-            //             headers: {
-            //                 'X-GitHub-Api-Version': '2022-11-28'
-            //             }
+                for (let i = 0; i < this.projects.length; i++) {
+                    store.octokit.request(`GET /repos/pietrocruciata/${this.projects[i].name}/contents/${this.projects[i].name}.png`, {
+                        // owner: 'pietrocruciata',
+                        // repo: 'laravel-api',
+                        headers: {
+                            'X-GitHub-Api-Version': '2022-11-28'
+                        }
 
-            //         }).then((res) => {
-            //             console.log(res);
+                    }).then((res) => {
+                        console.log(res);
 
-            //             this.projects[i]['image'] = res.data.download_url
-            //             console.log(this.projects);
+                        this.projects[i]['image'] = res.data.download_url
+                        console.log(this.projects);
 
-            //         })
-            //     }
-            // })
+                    })
+                }
+            })
 
 
         },
