@@ -13,7 +13,7 @@ export default {
     }
   },
   mounted() {
-    this.store.data.fetchdata(1, 15)
+    this.store.data.fetchdata()
   },
 }
 </script>

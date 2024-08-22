@@ -22,8 +22,7 @@ const store = reactive({
                     }
                 }).then((res) =>{
                     this.projects = res.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-                    console.log(this.projects); 
-              
+                    console.log(this.projects);    
                 });
             
             

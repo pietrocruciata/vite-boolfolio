@@ -30,9 +30,8 @@ export default {
   data() {
     return {
       store,
-      projects: [],
       currentPage: 1,
-      projectsPerPage: 15
+      projectsPerPage: 9
     };
   },
   computed: {
@@ -68,8 +67,9 @@ export default {
 @use '../style/general';
 
 .bg-blue-botton{
-  cursorpo;
+  
   background-color: $blue;
   padding: 5px;
+  cursor: pointer;
 }
 </style>
