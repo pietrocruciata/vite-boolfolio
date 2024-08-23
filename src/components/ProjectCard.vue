@@ -1,7 +1,7 @@
 <template>
 
   <div class="card  col-3">
-    <img :src="item.image" alt="">
+    <img :src="item.image" alt="" class="border-bottom">
 
     <div class="p-3 text-center">
     <h4 class="card-title title mt-2 mb-1">
