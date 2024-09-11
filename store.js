@@ -27,7 +27,7 @@ const store = reactive({
              .then(() => {
 
                 for (let i = 0; i < this.projects.length; i++) {
-                    store.octokit.request(`GET /repos/pietrocruciata/${this.projects[i].name}/contents/${this.projects[i].name}.png`, {
+                    store.octokit.request(`GET /repos/${this.projects[i].owner.login}/${this.projects[i].name}/contents/${this.projects[i].name}.png`, {
                         // owner: 'pietrocruciata',
                         // repo: 'laravel-api',
                         headers: {
@@ -35,10 +35,10 @@ const store = reactive({
                         }
 
                     }).then((res) => {
-                        console.log(res);
+                        // console.log(res);
 
                         this.projects[i]['image'] = res.data.download_url
-                        console.log(this.projects);
+                        // console.log(this.projects);
 
                     })
                 }
@@ -63,8 +63,10 @@ const store = reactive({
             }).then(() => {
                 store.octokit.request(`GET /repos/${this.projects[i].full_name.split('/')[0]}/${this.projects[i].name}/languages`).then((res) => {
                     this.projectsingle['all_languages'] = Object.keys(res.data)
+                
 
-                    console.log(this.projectsingle);
+
+                    // console.log(this.projectsingle);
 
                 })
 

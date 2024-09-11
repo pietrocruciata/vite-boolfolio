@@ -1,12 +1,13 @@
 <template>
 
-  <div class="card  col-3">
+  <div class="card  col-3 b-sand">
     <img :src="item.image" alt="" class="border-bottom">
 
     <div class="p-3 text-center">
     <h4 class="card-title title mt-2 mb-1">
       {{ item.name }}
     </h4>
+        
     <RouterLink :to="{ name: 'project', params: { id: project } }" class="show card-body">
       Visualizza il progetto
     </RouterLink>
@@ -61,4 +62,12 @@ export default {
     background-color: $blue;
   }
 }
+
+.b-sand{
+  &:hover{
+    border: 5px solid $yellow;
+  }
+}
+
+
 </style>

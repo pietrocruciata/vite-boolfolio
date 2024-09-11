@@ -20,18 +20,19 @@ export default {
 
 <template>
   <header>
-    <div class=" p-5 d-flex justify-content-around bg-header">
+    <div class=" d-flex justify-content-around bg-header">
 
-      <nav class="d-flex gap-3 align-items-center">
-        <RouterLink :class="$route.fullPath === '/' ? 'text-header' : 'c-white'" :to="{ name: 'home' }">Home
+      <nav class="d-flex gap-5 align-items-center ">
+        <RouterLink :class="$route.fullPath === '/' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'home' }">Home
         </RouterLink>
-        <RouterLink :class="$route.fullPath === '/contact' ? 'text-header' : 'c-white'" :to="{ name: 'contact' }">
-          Contatti
-        </RouterLink>
-        <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header' : 'c-white'" :to="{ name: 'portfolio' }">I
+        <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'portfolio' }">I
           Miei
           Progetti
         </RouterLink>
+        <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'contact' }">
+          Chi Sono
+        </RouterLink>
+     
       </nav>
     </div>
   </header>
@@ -50,11 +51,22 @@ export default {
 @use '../style/general';
 
 .text-header {
-  color: $yellow;
+  
+  font-size: 20px;
+  color: $blue;
+  background-color: $yellow;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  justify-content: center;
+  
 }
 
 .bg-header {
   background-color: $blue;
+  border-bottom: 4px solid $yellow;
+  height: 80px;
 }
 
 .c-white {
