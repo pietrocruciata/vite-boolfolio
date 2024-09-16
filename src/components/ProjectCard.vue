@@ -1,4 +1,4 @@
-<template>
+<template     v-if="item.status != 'none/n'">
 
   <div class="card  col-3 b-sand">
     <img :src="item.image" alt="" class="border-bottom">
@@ -65,7 +65,8 @@ export default {
 
 .b-sand{
   &:hover{
-    border: 5px solid $yellow;
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px $yellow;
   }
 }
 

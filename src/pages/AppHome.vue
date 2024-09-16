@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex bg-blue">
+  <div class="d-flex pres-part p-4 ">
     <div class="col-4 left-part ">
       <img src="/public/img/foto profilo img.jpeg" alt="" class="img-profile">
     </div>
@@ -11,16 +11,28 @@
           class="important-text">Piero</span>. Un ragazzo siciliano attaccato alla propria terra con un forte desiderio
         di crescere in questo mondo lavorativo.
         Fin dai tempi scolastici sono sempre stato attratto dalla matematica e dalla risoluzione di problemi che mi
-        hanno portato ad affacciarmi su questo settore lavorativo. Mi ritengo un tipo solare, simpatico, ma <span
-          class="important-text">Serio</span> e preciso allo stesso tempo. Amo la <span
-          class="important-text">Musica</span> , lo <span class="important-text">Sport</span> e sono sempre pronto a
-        mettemri in gioco cercando sempre di raggiungere i miei obbiettivi.
+        hanno portato ad affacciarmi su questo settore lavorativo. Mi ritengo un tipo solare e simpatico, ma <span
+          class="important-text">Serio</span> e preciso allo stesso tempo.
       </div>
     </div>
   </div>
-  <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill" class="bg-darkblue">
 
-  </SkillsComponent>
+  <div class=" bg-darkblue">
+    <div class=" d-flex gap-5 p-3 justify-content-center flex-wrap">
+      <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill">
+
+      </SkillsComponent>
+    </div>
+    <div class="container">
+      <div class="row">
+        <instructionComponent></instructionComponent>
+
+      </div>
+
+    </div>
+  </div>
+
+
 
 
 
@@ -28,9 +40,27 @@
 
 <script>
 import SkillsComponent from '../components/SkillsComponent.vue';
+import instructionComponent from '../components/instructionComponent.vue';
 export default {
   components: {
-    SkillsComponent
+    SkillsComponent,
+    instructionComponent
+  },
+  data() {
+    return {
+      skills: [
+        '/public/img/css.png',
+        '/public/img/html.png',
+        '/public/img/php.png',
+        '/public/img/vue.png',
+        '/public/img/vite.png',
+        '/public/img/mysql.png',
+        '/public/img/js.png',
+        '/public/img/bootstrap.png',
+        '/public/img/laravel.png',
+        '/public/img/sass.png'
+      ]
+    }
   }
 }
 </script>
@@ -38,6 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/partials/palette' as *;
+
 
 
 .left-part {
@@ -51,14 +82,16 @@ export default {
   width: 300px;
 }
 
-.bg-blue {
+.pres-part {
   background-color: $blue;
+  border-bottom: 4px solid $yellow;
+  text-align: center;
 }
 
 .name {
   color: $yellow;
   font-size: 70px;
-  text-align: center;
+  // text-align: center;
   font-family: auto;
 
 }
@@ -84,5 +117,6 @@ export default {
 
 .bg-darkblue {
   background-color: $darkblue;
+  overflow: hidden;
 }
 </style>

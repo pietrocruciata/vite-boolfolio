@@ -14,7 +14,7 @@
     <div class=" d-flex gap-4 flex-wrap justify-content-center">
       <ProjectCard v-for="(project, i) in currentProjects" :key="project.id" :item="project" :project="i">
         {{ project.name }}
-      
+
       </ProjectCard>
     </div>
   </div>
@@ -36,17 +36,17 @@ export default {
     return {
       store,
       currentPage: 1,
-      projectsPerPage: 9
+      projectsPerPage: 6
     };
   },
   computed: {
     totalPages() {
-      return Math.ceil(this.store.data.projects.length / this.projectsPerPage);
+      return Math.ceil(this.store.data.viewProjects.length / this.projectsPerPage);
     },
     currentProjects() {
       const start = (this.currentPage - 1) * this.projectsPerPage;
       const end = start + this.projectsPerPage;
-      return this.store.data.projects.slice(start, end);
+      return this.store.data.viewProjects.slice(start, end);
     }
   },
   methods: {
@@ -80,15 +80,16 @@ export default {
   font-size: large;
 
   &:hover {
-  border: 1px solid $blue;
-  color: $darkblue
+    border: 1px solid $blue;
+    color: $darkblue
   }
 }
 
 .bg-blue {
   background-color: $blue;
 }
-.c-sand{
+
+.c-sand {
   color: white;
 }
 </style>
