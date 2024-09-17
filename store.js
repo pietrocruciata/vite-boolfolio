@@ -46,7 +46,7 @@ const store = reactive({
                     })
                   
                 }
-                // console.log(this.viewProjects);
+                 console.log(this.viewProjects);
 
             })
                 .then(() => {
