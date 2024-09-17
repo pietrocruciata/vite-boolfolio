@@ -106,7 +106,7 @@ export default {
 }
 
 .pres-part {
-  background-color: $blue;
+  background-color: $darkblue;
   border-bottom: 4px solid $yellow;
   text-align: center;
 }
@@ -122,7 +122,7 @@ export default {
 .role {
   color: white;
   text-align: center;
-  background-color: $darkblue;
+  background-color: $blue;
   padding: 5px
 }
 

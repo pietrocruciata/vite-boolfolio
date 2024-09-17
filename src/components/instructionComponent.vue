@@ -20,7 +20,7 @@
         <div class="view-document" @click="viewdocument()">
             Visualizza L'Attestato
         </div>
-        <div v-if="mostraImmagine" class="overlay">
+        <div v-if="mostraImmagine" class="overlay ">
             <img src="/public/img/AttestatoBoolean.jpg" alt="" class="image-centered">
             <span @click="viewdocument()" class="view-document pt-4">CHIUDI </span>
 
@@ -38,12 +38,12 @@ export default {
 
     data() {
         return {
-            mostraImmagine: false // Variabile per mostrare/nascondere l'immagine
+            mostraImmagine: false 
         };
     },
     methods: {
         viewdocument() {
-            // Cambia lo stato della variabile per mostrare o nascondere l'immagine
+            
             this.mostraImmagine = !this.mostraImmagine;
         }
     }
@@ -62,20 +62,20 @@ export default {
   transform: translate(-50%, -50%);
   max-width: 80%;
   max-height: 80%;
-  z-index: 1001; /* Assicura che sia sopra l'overlay */
+  z-index: 1001; 
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
-/* Overlay semi-trasparente per opacizzare lo sfondo */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Colore nero semi-trasparente */
-  z-index: 1000; /* Deve stare sotto l'immagine ma sopra il resto */
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 1000; 
 }
 
 .view-document {

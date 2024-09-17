@@ -5,11 +5,19 @@ import store from '../store.js';
 
 export default {
   components: {
-   AppFooter
+    AppFooter
   },
   data() {
     return {
-      store
+      store,
+      mostraImmagine: false
+
+    }
+  },
+  methods: {
+    viewdocument() {
+
+      this.mostraImmagine = !this.mostraImmagine;
     }
   },
   mounted() {
@@ -20,7 +28,7 @@ export default {
 
 <template>
   <header>
-   
+
     <div class=" d-flex justify-content-center bg-header gap-2">
 
       <div class="title col-sm-4">
@@ -28,17 +36,26 @@ export default {
       </div>
 
       <nav class="d-flex gap-2 gap-sm-5 align-items-center col-sm-8 justify-content-center">
-        
+
         <RouterLink :class="$route.fullPath === '/' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'home' }">Home
         </RouterLink>
-        <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'portfolio' }">I
+        <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header rounded-top' : 'c-white'"
+          :to="{ name: 'portfolio' }">I
           Miei
           Progetti
         </RouterLink>
         <!-- <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'contact' }">
           Chi Sono
         </RouterLink> -->
-     
+        <div class="logo-size" @click="viewdocument()">
+          <img src="/public/img/image.png" alt="">
+        </div>
+        <div v-if="mostraImmagine" class="overlay d-flex flex-column align-items-center">
+          <img src="/public/img/Pietro.Cruciata.jpg" alt="" class="image-centered">
+          <span @click="viewdocument()" class="view-document ">CHIUDI </span>
+
+        </div>
+
       </nav>
     </div>
   </header>
@@ -48,7 +65,7 @@ export default {
   </main>
 
   <footer>
-    <AppFooter/>
+    <AppFooter />
   </footer>
 </template>
 
@@ -56,20 +73,64 @@ export default {
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
+.view-document {
+    margin: 5px;
+    padding: 10px;
+    background-color: $yellow;
+    color: $darkblue;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 20px;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px $yellow;
+    }
+
+}
+
+.image-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 80%;
+  z-index: 1001;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.logo-size {
+  width: 40px;
+  cursor: pointer;
+}
 
 .title {
-    color: $yellow;
-    font-size: 40px;
-    text-align: center;
-    font-family: math;
-    
-    // border-top: 4px solid $yellow;
-    // border-bottom: 1px solid $yellow;
-    // position: absolute;
-    // left: 6%;
+  color: $yellow;
+  font-size: 40px;
+  text-align: center;
+  font-family: math;
+
+  // border-top: 4px solid $yellow;
+  // border-bottom: 1px solid $yellow;
+  // position: absolute;
+  // left: 6%;
 }
+
 .text-header {
-  
+
   font-size: 20px;
   // color: $blue;
   // background-color: $yellow;
@@ -79,7 +140,7 @@ export default {
   align-items: center;
   // width: 150px;
   justify-content: center;
-  
+
 }
 
 .bg-header {

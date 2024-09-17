@@ -1,16 +1,21 @@
 <template>
 <footer class="footer bg-dark text-white py-4">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center ">
+        <h5 class="title">Dove Sono</h5>
+        Alcamo (TP), 91011
+        </div>
         
-        <div class="col-lg-6 col-md-6 mb-4 mb-lg-0 text-center text-lg-left">
+        <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center text-lg-left">
           <h5 class="title">Contattami</h5>
           <p> <a href="mailto:cruciata9748@gmail.com" class="social">Cruciata9748@gmail.com</a></p>
           <p> <a href="tel:+393393132363" class="social">+39 3393132363</a></p>
         </div>
 
        
-        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center ">
+        <div class="col-lg-3 col-md-3 d-flex flex-column align-items-center ">
           <h5 class="title">Seguimi su</h5>
           <div class="d-flex w-50 justify-content-center gap-3">
             <a href="https://github.com/pietrocruciata" class="social me-3" target="_blank">

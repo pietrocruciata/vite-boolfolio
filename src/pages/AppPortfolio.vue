@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue py-3">
+  <div class="bg-darkblue py-3">
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-around">
@@ -85,8 +85,8 @@ export default {
   }
 }
 
-.bg-blue {
-  background-color: $blue;
+.bg-darkblue {
+  background-color: $darkblue;
 }
 
 .c-sand {
