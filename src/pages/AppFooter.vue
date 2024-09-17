@@ -1,0 +1,75 @@
+<template>
+<footer class="footer bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-lg-6 col-md-6 mb-4 mb-lg-0 text-center text-lg-left">
+          <h5 class="title">Contattami</h5>
+          <p> <a href="mailto:cruciata9748@gmail.com" class="social">Cruciata9748@gmail.com</a></p>
+          <p> <a href="tel:+393393132363" class="social">+39 3393132363</a></p>
+        </div>
+
+       
+        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center ">
+          <h5 class="title">Seguimi su</h5>
+          <div class="d-flex w-50 justify-content-center gap-3">
+            <a href="https://github.com/pietrocruciata" class="social me-3" target="_blank">
+                <img src="/public/img/github.png" alt="">
+          </a>
+          <a href="https://www.linkedin.com/in/pietro-cruciata-7463a2258/" class="social me-3" target="_blank">
+            <img src="/public/img/linkedin.png" alt="">
+          </a>
+          <a href="https://instagram.com/piero_cruciata" class="social" target="_blank">
+            <img src="/public/img/instagram.png" alt="">
+            
+          </a>
+          </div>
+          
+        </div>
+      </div>
+      <!-- <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="mb-0">&copy; 2024 CRC. Tutti i diritti riservati.</p>
+        </div>
+      </div> -->
+    </div>
+  </footer>
+</template>
+
+<script>
+
+export default {};
+</script>
+
+<style scoped lang="scss">
+@use '../style/partials/palette' as *;
+
+
+.social{
+    &:hover {
+        transform: scale(1.05);
+        border-bottom: 1px solid $yellow;
+    }
+}
+.footer a:hover {
+    text-decoration: none;
+    color: #ffc107;
+    /* Colore di hover sui link */
+}
+
+.footer .fab {
+    transition: transform 0.2s;
+}
+
+.footer .fab:hover {
+    transform: scale(1.1);
+}
+.title {
+    color: $yellow;
+    font-size: 40px;
+    text-align: center;
+    font-family: auto;
+    // border-top: 4px solid $yellow;
+    // border-bottom: 1px solid $yellow;
+}
+</style>

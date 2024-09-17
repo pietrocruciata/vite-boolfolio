@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-blue">
+  <div class="bg-blue py-3">
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-around">
@@ -80,8 +80,8 @@ export default {
   font-size: large;
 
   &:hover {
-    border: 1px solid $blue;
-    color: $darkblue
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px $yellow;
   }
 }
 

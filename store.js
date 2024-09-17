@@ -38,7 +38,7 @@ const store = reactive({
                         
                         const status = atob(res.data.content)
                         // this.projects[i]['status'] = status
-                        console.log(status);
+                        // console.log(status);
                         
                         if(status !== 'none'){
                            this.viewProjects.push(this.projects[i])
@@ -46,7 +46,7 @@ const store = reactive({
                     })
                   
                 }
-                console.log(this.viewProjects);
+                // console.log(this.viewProjects);
 
             })
                 .then(() => {
@@ -73,7 +73,7 @@ const store = reactive({
         },
 
         async fetchproject(i) {
-            await store.octokit.request(`GET /repositories/${this.projects[i].id}`, {
+            await store.octokit.request(`GET /repositories/${this.viewProjects[i].id}`, {
                 // owner: 'pietrocruciata',
                 // repo: 'laravel-api',
                 headers: {
@@ -86,7 +86,7 @@ const store = reactive({
                 this.projectsingle = res.data
 
             }).then(() => {
-                store.octokit.request(`GET /repos/${this.projects[i].full_name.split('/')[0]}/${this.projects[i].name}/languages`).then((res) => {
+                store.octokit.request(`GET /repos/${this.viewProjects[i].full_name.split('/')[0]}/${this.viewProjects[i].name}/languages`).then((res) => {
                     this.projectsingle['all_languages'] = Object.keys(res.data)
 
 

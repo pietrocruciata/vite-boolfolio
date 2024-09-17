@@ -1,11 +1,11 @@
 <script>
-import AppMain from './components/AppMain.vue';
+import AppFooter from './pages/AppFooter.vue';
 import store from '../store.js';
 
 
 export default {
   components: {
-    AppMain
+   AppFooter
   },
   data() {
     return {
@@ -20,18 +20,24 @@ export default {
 
 <template>
   <header>
-    <div class=" d-flex justify-content-around bg-header">
+   
+    <div class=" d-flex justify-content-center bg-header gap-2">
 
-      <nav class="d-flex gap-5 align-items-center ">
+      <div class="title col-sm-4">
+        CRC
+      </div>
+
+      <nav class="d-flex gap-2 gap-sm-5 align-items-center col-sm-8 justify-content-center">
+        
         <RouterLink :class="$route.fullPath === '/' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'home' }">Home
         </RouterLink>
         <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'portfolio' }">I
           Miei
           Progetti
         </RouterLink>
-        <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'contact' }">
+        <!-- <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'contact' }">
           Chi Sono
-        </RouterLink>
+        </RouterLink> -->
      
       </nav>
     </div>
@@ -42,23 +48,36 @@ export default {
   </main>
 
   <footer>
-
+    <AppFooter/>
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
+
+.title {
+    color: $yellow;
+    font-size: 40px;
+    text-align: center;
+    font-family: auto;
+    
+    // border-top: 4px solid $yellow;
+    // border-bottom: 1px solid $yellow;
+    // position: absolute;
+    // left: 6%;
+}
 .text-header {
   
   font-size: 20px;
-  color: $blue;
-  background-color: $yellow;
+  // color: $blue;
+  // background-color: $yellow;
+  color: $yellow;
   height: 100%;
   display: flex;
   align-items: center;
-  width: 150px;
+  // width: 150px;
   justify-content: center;
   
 }

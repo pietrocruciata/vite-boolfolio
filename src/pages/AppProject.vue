@@ -34,7 +34,11 @@ export default {
     mounted() {
         this.store.data.fetchproject(this.$route.params.id)
     },
-  
+    created() {
+        console.log(store.data.projectsingle);
+
+    }
+
 
 }
 </script>

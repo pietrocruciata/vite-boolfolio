@@ -1,6 +1,6 @@
 <template     v-if="item.status != 'none/n'">
 
-  <div class="card  col-3 b-sand">
+  <div class="card  col-md-3 b-sand">
     <img :src="item.image" alt="" class="border-bottom">
 
     <div class="p-3 text-center">
@@ -54,9 +54,12 @@ export default {
 }
 
 .show{
+  font-size: 20px;
   border-radius: 10px;
   width: fit-content;
   padding: 5px;
+  color: $blue;
+  background-color: $yellow;
   &:hover{
     color: white;
     background-color: $blue;
