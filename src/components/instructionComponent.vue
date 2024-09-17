@@ -22,7 +22,7 @@
         </div>
         <div v-if="mostraImmagine" class="overlay">
             <img src="/public/img/AttestatoBoolean.jpg" alt="" class="image-centered">
-            <botton @click="viewdocument()" class="view-document pt-4">CHIUDI </botton>
+            <span @click="viewdocument()" class="view-document pt-4">CHIUDI </span>
 
         </div>
 

@@ -61,7 +61,7 @@ export default {
     color: $yellow;
     font-size: 40px;
     text-align: center;
-    font-family: auto;
+    font-family: math;
     
     // border-top: 4px solid $yellow;
     // border-bottom: 1px solid $yellow;

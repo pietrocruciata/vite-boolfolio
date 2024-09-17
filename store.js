@@ -91,7 +91,7 @@ const store = reactive({
 
 
 
-                    // console.log(this.projectsingle);
+                    // // console.log(this.projectsingle);
 
                 })
 
