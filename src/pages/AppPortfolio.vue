@@ -92,4 +92,5 @@ export default {
 .c-sand {
   color: white;
 }
+
 </style>

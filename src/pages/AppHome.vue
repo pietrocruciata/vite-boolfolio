@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row py-4 ">
         <div class="col-lg-4 col-md-6 left-part ">
-          <img src="/public/img/foto profilo img.jpeg" alt="" class="img-profile">
+          <img src="/public/img/foto profilo img.jpeg" alt="" class="img-profile animate__animated animate__fadeInLeft">
         </div>
         <div class="col-lg-8 col-md-6 right-part">
           <h2 class="mt-3 name">Pietro Cruciata</h2>
@@ -23,7 +23,7 @@
   </section>
 
   <section class="bg-darkblue">
-    <div class=" d-flex gap-5 p-3 justify-content-center flex-wrap skills-part">
+    <div class=" d-flex gap-5 p-3 justify-content-center flex-wrap skills-part animate__animated animate__fadeIn">
       <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill">
 
       </SkillsComponent>
