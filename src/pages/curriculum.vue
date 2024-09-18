@@ -1,6 +1,5 @@
 <template>
-
-<div>
+    <div>
         <img src="/public/img/Pietro.Cruciata.jpg" alt="">
     </div>
 </template>

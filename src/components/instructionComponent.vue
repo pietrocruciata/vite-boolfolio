@@ -4,7 +4,7 @@
     <div class="col-lg-4 col-md-6 text-center">
         <img src="/public/img/boolean.png" alt="" class="animate__animated animate__fadeInLeft">
     </div>
-    <div class="col-lg-8 col-md-6 description align-self-center d-flex flex-column align-items-center">
+    <div class="col-lg-8 col-md-6 description align-self-center d-flex flex-column align-items-center ">
         <div>
             Con <span class="important-text">Boolean</span> ho piantato le mie fondamenta <span
                 class="important-text">Tech</span>, dove giorno dopo giorno miglioravo le mie <span

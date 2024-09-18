@@ -5,7 +5,7 @@
         <div class="col-lg-4 col-md-6 left-part ">
           <img src="/public/img/foto profilo img.jpeg" alt="" class="img-profile animate__animated animate__fadeInLeft">
         </div>
-        <div class="col-lg-8 col-md-6 right-part animate__animated animate__fadeInDown">
+        <div class="col-lg-8 col-md-6 right-part animate__animated animate__fadeInRight">
           <h2 class="mt-3 name">Pietro Cruciata</h2>
           <h5 class="role">Jr Full-Stack Web Developer</h5>
           <div class="description mt-5">

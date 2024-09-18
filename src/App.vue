@@ -26,8 +26,8 @@ export default {
 }
 </script>
 
-<template>
-  <header>
+<template >
+  <header class="overflow">
 
     <div class=" d-flex justify-content-center bg-header gap-2">
 
@@ -44,23 +44,23 @@ export default {
           Miei
           Progetti
         </RouterLink>
-        <!-- <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'contact' }">
-          Chi Sono
-        </RouterLink> -->
-        <div class="logo-size" @click="viewdocument()">
+        <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top logo-size' : 'c-white logo-size'" :to="{ name: 'contact' }">
           <img src="/public/img/image.png" alt="">
-        </div>
-        <div v-if="mostraImmagine" class="overlay d-flex flex-column align-items-center">
+
+        </RouterLink>
+        <!-- <div class="logo-size" @click="viewdocument()">
+        </div> -->
+        <!-- <div v-if="mostraImmagine" class="overlay d-flex flex-column align-items-center">
           <img src="/public/img/Pietro.Cruciata.jpg" alt="" class="image-centered">
           <span @click="viewdocument()" class="view-document ">CHIUDI </span>
 
-        </div>
+        </div> -->
 
       </nav>
     </div>
   </header>
 
-  <main>
+  <main >
     <RouterView />
   </main>
 
@@ -151,5 +151,9 @@ export default {
 
 .c-white {
   color: white;
+}
+
+.overflow{
+  overflow: hidden;
 }
 </style>
