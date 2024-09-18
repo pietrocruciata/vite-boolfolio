@@ -1,4 +1,4 @@
-<template     v-if="item.status != 'none/n'">
+<template >
 
   <div class="card  col-md-3 b-sand">
     <img :src="item.image" alt="" class="border-bottom">
@@ -8,7 +8,7 @@
       {{ item.name }}
     </h4>
         
-    <RouterLink :to="{ name: 'project', params: { id: project } }" class="show card-body">
+    <RouterLink :to="{ name: 'project', params: { id: item.id } }" class="show card-body">
       Visualizza il progetto
     </RouterLink>
     </div>

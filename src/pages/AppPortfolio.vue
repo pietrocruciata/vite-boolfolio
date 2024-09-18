@@ -12,7 +12,7 @@
 
     </div>
     <div class=" d-flex gap-4 flex-wrap justify-content-center">
-      <ProjectCard v-for="(project, i) in currentProjects" :key="project.id" :item="project" :project="i">
+      <ProjectCard v-for="(project, i) in currentProjects" :key="project.id" :item="project">
         {{ project.name }}
 
       </ProjectCard>

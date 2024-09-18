@@ -10,7 +10,7 @@ const store = reactive({
     data: {
         projects: [],
         image: [],
-        viewProjects:[],
+        viewProjects: [],
         projectsingle: '',
 
 
@@ -32,21 +32,21 @@ const store = reactive({
                             'accept': 'application/vnd.github+json'
 
                         }
-                        
-                    }).then((res)=>{
+
+                    }).then((res) => {
                         // console.log(atob(res.data.content));
-                        
+
                         const status = atob(res.data.content)
                         // this.projects[i]['status'] = status
                         // console.log(status);
-                        
-                        if(status !== 'none'){
-                           this.viewProjects.push(this.projects[i])
+
+                        if (status !== 'none') {
+                            this.viewProjects.push(this.projects[i])
                         }
                     })
-                  
+
                 }
-                 console.log(this.viewProjects);
+                console.log(this.viewProjects);
 
             })
                 .then(() => {
@@ -72,31 +72,57 @@ const store = reactive({
 
         },
 
-        async fetchproject(i) {
-            await store.octokit.request(`GET /repositories/${this.viewProjects[i].id}`, {
-                // owner: 'pietrocruciata',
-                // repo: 'laravel-api',
+        // async fetchproject(i) {
+        //     await store.octokit.request(`GET /repositories/${this.viewProjects[i].id}`, {
+        //         // owner: 'pietrocruciata',
+        //         // repo: 'laravel-api',
+        //         headers: {
+        //             'X-GitHub-Api-Version': '2022-11-28'
+        //         }
+
+        //     }).then((res) => {
+
+        //         // console.log(res);
+        //         this.projectsingle = res.data
+
+        //     }).then(() => {
+        //         store.octokit.request(`GET /repos/${this.viewProjects[i].full_name.split('/')[0]}/${this.viewProjects[i].name}/languages`).then((res) => {
+        //             this.projectsingle['all_languages'] = Object.keys(res.data)
+
+
+
+        //             // // console.log(this.projectsingle);
+
+        //         })
+
+        //     })
+        // }
+
+        async fetchproject(id) {
+            await store.octokit.request(`GET /repositories/${id}`, {
                 headers: {
-                    'X-GitHub-Api-Version': '2022-11-28'
+                    'X-GitHub-Api-Version': '2022-11-28' // Rimosso gli spazi extra
                 }
-
-            }).then((res) => {
-
-                // console.log(res);
-                this.projectsingle = res.data
-
+            }).then((response) => {
+                this.projectsingle = response.data;
+                console.log('response: ', this.projectsingle);
             }).then(() => {
-                store.octokit.request(`GET /repos/${this.viewProjects[i].full_name.split('/')[0]}/${this.viewProjects[i].name}/languages`).then((res) => {
-                    this.projectsingle['all_languages'] = Object.keys(res.data)
-
-
-
-                    // // console.log(this.projectsingle);
-
+                store.octokit.request(`GET /repositories/${id}/languages`).then((res) => {
+                    this.projectsingle['all_languages'] = Object.keys(res.data);
+                    console.log('ciaociaociao: ', this.projectsingle);
                 })
-
-            })
+            }).then(() => {
+                store.octokit.request(`GET /repositories/${id}/contents/${this.projectsingle.name}.png`, {
+                    headers: {
+                        'X-GitHub-Api-Version': '2022-11-28' // Rimosso gli spazi extra
+                    }
+                }).then((response) => {
+                    this.projectsingle['image'] = response.data.download_url;
+                    console.log(this.projectsingle);
+                })
+            });
         }
+        
 
 
 
