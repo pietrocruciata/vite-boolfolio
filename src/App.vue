@@ -26,47 +26,53 @@ export default {
 }
 </script>
 
-<template >
-  <header class="overflow">
+<template>
+  <section class="d-flex flex-column">
+    <header class="overflow">
 
-    <div class=" d-flex justify-content-center bg-header gap-2">
+      <div class=" d-flex justify-content-center bg-header gap-2">
 
-      <div class="title col-sm-4">
-        CRC
+        <div class="title col-sm-4 align-self-center">
+          CRC
+        </div>
+
+        <nav class="d-flex gap-2 gap-sm-5 align-items-center col-sm-8 justify-content-center">
+
+          <RouterLink :class="$route.fullPath === '/' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'home' }">
+            Home
+          </RouterLink>
+          <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header rounded-top' : 'c-white'"
+            :to="{ name: 'portfolio' }">I
+            Miei
+            Progetti
+          </RouterLink>
+          <RouterLink
+            :class="$route.fullPath === '/contact' ? 'text-header rounded-top logo-size' : 'c-white logo-size'"
+            :to="{ name: 'contact' }">
+            <img src="/public/img/image.png" alt="">
+
+          </RouterLink>
+          <!-- <div class="logo-size" @click="viewdocument()">
+    </div> -->
+          <!-- <div v-if="mostraImmagine" class="overlay d-flex flex-column align-items-center">
+      <img src="/public/img/Pietro.Cruciata.jpg" alt="" class="image-centered">
+      <span @click="viewdocument()" class="view-document ">CHIUDI </span>
+
+    </div> -->
+
+        </nav>
       </div>
+    </header>
 
-      <nav class="d-flex gap-2 gap-sm-5 align-items-center col-sm-8 justify-content-center">
+    <main class="bg-darkblue">
+      <RouterView />
+    </main>
 
-        <RouterLink :class="$route.fullPath === '/' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'home' }">Home
-        </RouterLink>
-        <RouterLink :class="$route.fullPath === '/portfolio' ? 'text-header rounded-top' : 'c-white'"
-          :to="{ name: 'portfolio' }">I
-          Miei
-          Progetti
-        </RouterLink>
-        <RouterLink :class="$route.fullPath === '/contact' ? 'text-header rounded-top logo-size' : 'c-white logo-size'" :to="{ name: 'contact' }">
-          <img src="/public/img/image.png" alt="">
+    <footer>
+      <AppFooter />
+    </footer>
+  </section>
 
-        </RouterLink>
-        <!-- <div class="logo-size" @click="viewdocument()">
-        </div> -->
-        <!-- <div v-if="mostraImmagine" class="overlay d-flex flex-column align-items-center">
-          <img src="/public/img/Pietro.Cruciata.jpg" alt="" class="image-centered">
-          <span @click="viewdocument()" class="view-document ">CHIUDI </span>
-
-        </div> -->
-
-      </nav>
-    </div>
-  </header>
-
-  <main >
-    <RouterView />
-  </main>
-
-  <footer>
-    <AppFooter />
-  </footer>
 </template>
 
 <style lang="scss" scoped>
@@ -74,18 +80,18 @@ export default {
 @use '../style/general';
 
 .view-document {
-    margin: 5px;
-    padding: 10px;
-    background-color: $yellow;
-    color: $darkblue;
-    cursor: pointer;
-    width: fit-content;
-    border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  background-color: $yellow;
+  color: $darkblue;
+  cursor: pointer;
+  width: fit-content;
+  border-radius: 20px;
 
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 16px $yellow;
-    }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px $yellow;
+  }
 
 }
 
@@ -153,7 +159,11 @@ export default {
   color: white;
 }
 
-.overflow{
+.overflow {
   overflow: hidden;
+}
+
+.bg-darkblue{
+  background-color: $darkblue;
 }
 </style>

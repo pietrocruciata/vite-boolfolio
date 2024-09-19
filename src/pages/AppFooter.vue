@@ -17,7 +17,7 @@
        
         <div class="col-lg-3 col-md-3 d-flex flex-column align-items-center ">
           <h5 class="title">Seguimi su</h5>
-          <div class="d-flex w-50 justify-content-center gap-3">
+          <div class="d-flex justify-content-center gap-3">
             <a href="https://github.com/pietrocruciata" class="social me-3" target="_blank">
                 <img src="/public/img/github.png" alt="">
           </a>
@@ -32,11 +32,6 @@
           
         </div>
       </div>
-      <!-- <div class="row mt-4">
-        <div class="col-12 text-center">
-          <p class="mb-0">&copy; 2024 CRC. Tutti i diritti riservati.</p>
-        </div>
-      </div> -->
     </div>
   </footer>
 </template>
@@ -48,9 +43,12 @@ export default {};
 
 <style scoped lang="scss">
 @use '../style/partials/palette' as *;
+@use '../style/general';
+
 
 
 .social{
+  width: 50px;
     &:hover {
         transform: scale(1.05);
         border-bottom: 1px solid $yellow;
@@ -59,7 +57,7 @@ export default {};
 .footer a:hover {
     text-decoration: none;
     color: #ffc107;
-    /* Colore di hover sui link */
+    
 }
 
 .footer .fab {

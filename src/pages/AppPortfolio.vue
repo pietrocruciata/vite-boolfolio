@@ -1,10 +1,18 @@
 <template>
   <div class="bg-darkblue py-3">
+
     <div class="container">
       <div class="row">
+        <div
+          class="justify-content-center d-flex align-items-center description description-part animate__animated animate__fadeInLeft p-3">
+          Qui Troverai alcuni dei
+          miei Progetti ordinati per data di creazione,dove potrai quindi visionare la mia
+          Crescita progetto dopo progetto.
+        </div>
+
         <div class="d-flex justify-content-around">
           <div @click="previousPage" :disabled="currentPage === 1" class="bg-sand-botton m-3">indietro</div>
-          <span class="m-3 c-sand">Pagina {{ currentPage }} di {{ totalPages }}</span>
+          <span class="m-3 c-sand align-self-center description">Pagina {{ currentPage }} di {{ totalPages }}</span>
           <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-sand-botton m-3">avanti</div>
 
         </div>
@@ -67,7 +75,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
@@ -76,11 +84,11 @@ export default {
   background-color: $yellow;
   padding: 10px;
   cursor: pointer;
-  color: $blue;
+  color: $darkblue;
   font-size: large;
 
   &:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0 8px 16px $yellow;
   }
 }
@@ -93,4 +101,16 @@ export default {
   color: white;
 }
 
+.description {
+  color: white;
+  font-size: large;
+  text-align: center;
+
+}
+
+.description-part {
+  font-size: 25px;
+  // color: $yellow;
+  border-bottom: 4px solid $yellow;
+}
 </style>

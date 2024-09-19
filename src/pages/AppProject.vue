@@ -1,25 +1,40 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <img :src="store.data.projectsingle.image" alt="">
-            </div>
-            <div class="col-4">
-                <div>
+    <section class="bg-darkblue">
+        <div class="container">
+            <div class="row ">
+                <RouterLink class="view-document " :to="{ name: 'portfolio' }">
+                    <img src="/public/img/arrow.png" alt="" class="back">
+                </RouterLink>
+
+                <div class="title">
                     {{ store.data.projectsingle.name }}
                 </div>
-                <div v-for="language in store.data.projectsingle.all_languages">
-                    {{ language }}
-                </div>
                 <div>
-                    {{ store.data.projectsingle.description }}
-                    <a :href="store.data.projectsingle.html_url
-                        " target="blank">link git</a>
+                    <img :src="store.data.projectsingle.image" alt="">
                 </div>
-            </div>
 
+                <div class="text-center my-3 description">
+                    {{ store.data.projectsingle.description }}
+
+                </div>
+
+                <div class="d-flex justify-content-around py-2 ">
+
+                    <div v-for="language in store.data.projectsingle.all_languages" class="languages">
+                        {{ language }}
+                    </div>
+
+                </div>
+                <div class="text-center my-4">
+                    <a :href="store.data.projectsingle.html_url
+                        " target="blank" class="view-document">Visualizza il progetto completo su GitHub</a>
+                </div>
+
+
+            </div>
         </div>
-    </div>
+    </section>
+
 
 </template>
 
@@ -62,4 +77,68 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../style/partials/palette' as *;
+@use '../style/general';
+
+
+.description {
+  color: white;
+  font-size: large;
+  text-align: center;
+
+}
+
+.back {
+    width: 20px;
+}
+
+.title {
+    color: $yellow;
+    font-size: 40px;
+    text-align: center;
+    font-family: auto;
+    // border-top: 4px solid $yellow;
+    // border-bottom: 1px solid $yellow;
+}
+
+.bg-darkblue {
+    background-color: $darkblue;
+}
+
+.languages {
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    color: $darkblue;
+    font-weight: bold;
+    // cursor: pointer;
+    width: fit-content;
+    border-radius: 20px;
+    text-align: center;
+    width: 100px;
+
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px $yellow;
+    }
+
+}
+
+.view-document {
+    margin: 5px;
+    padding: 10px;
+    background-color: $yellow;
+    color: $darkblue;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 20px;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px $yellow;
+    }
+
+}
+</style>

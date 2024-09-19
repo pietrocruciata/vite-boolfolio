@@ -3,23 +3,23 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 
-//INSTALL FONT AWESOM
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+// //INSTALL FONT AWESOM
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { far } from '@fortawesome/free-regular-svg-icons'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
 
-// / import font awesome icon component /
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// // / import font awesome icon component /
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-// / add icons to the library */
-library.add(fas, far, fab)
+// // / add icons to the library */
+// library.add(fas, far, fab)
 
-const app = createApp(App)
+// const app = createApp(App)
 
-app.component('font-awesome-icon', FontAwesomeIcon)
+// app.component('font-awesome-icon', FontAwesomeIcon)
 
-// views components
+
 import { createRouter, createWebHistory } from 'vue-router'
 import AppHome from './pages/AppHome.vue'
 import AppPortfolio from './pages/AppPortfolio.vue'
@@ -36,6 +36,13 @@ const router = createRouter({
 		{ path: '/contact', name: 'contact', component: AppContact },
 		{ path: '/project/:id', name: 'project', component: AppProject }
 	],
+	scrollBehavior(to, from, savedPosition) {
+		if (savedPosition) {
+			return savedPosition;
+		} else {
+			return { x: 0, y: 0 };
+		}
+	},
 })
 
 createApp(App).use(router).mount('#app')

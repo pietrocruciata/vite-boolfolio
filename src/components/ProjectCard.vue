@@ -58,7 +58,7 @@ export default {
   border-radius: 10px;
   width: fit-content;
   padding: 5px;
-  color: $blue;
+  color: $darkblue;
   background-color: $yellow;
   &:hover{
     color: white;

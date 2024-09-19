@@ -140,6 +140,6 @@ export default {
 
 .bg-darkblue {
   background-color: $darkblue;
-  overflow: hidden;
+  // overflow: hidden;
 }
 </style>
