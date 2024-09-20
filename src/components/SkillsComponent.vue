@@ -2,16 +2,13 @@
 
             <img :src="item" alt="" class="skills-size " >
 
-   
-
-
 </template>
 
 <script>
 export default {
     props: {
         item: {
-            type: Object
+            type: String
         }
     }
 }
@@ -22,10 +19,10 @@ export default {
 @use '../style/general';
 .skills-size{
     cursor: pointer;
-    max-width: 150px;
+    max-width: 80px;
     &:hover{
     transform: scale(1.08); 
-    border-bottom: 1px solid $yellow;
+    // border-bottom: 1px solid $yellow;
     
   }
 }

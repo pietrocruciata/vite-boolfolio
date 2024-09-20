@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row py-4 ">
         <div class="col-lg-4 col-md-6 left-part ">
-          <img src="/public/img/foto profilo img.jpeg" alt="" class="img-profile animate__animated animate__fadeInLeft">
+          <img src="/public/img/fotoprofilointera.jpg" alt="" class="img-profile animate__animated animate__fadeInLeft rounded-4">
         </div>
         <div class="col-lg-8 col-md-6 right-part animate__animated animate__fadeInRight">
           <h2 class="mt-3 name">Pietro Cruciata</h2>
@@ -22,19 +22,19 @@
     </div>
   </section>
 
+  <div class=" d-flex gap-5 p-3 justify-content-center flex-wrap skills-part animate__animated animate__fadeIn bg-grey">
+    <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill">
+
+    </SkillsComponent>
+  </div>
   <section class="bg-darkblue">
-    <div class=" d-flex gap-5 p-3 justify-content-center flex-wrap skills-part animate__animated animate__fadeIn">
-      <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill">
 
-      </SkillsComponent>
-    </div>
-
-    <div class="container py-4">
+    <div class="container">
       <div class="title py-3">
-          Istruzione
-        </div>
-      <div class="row justify-content-center  ">
-        
+        Istruzione
+      </div>
+      <div class="row justify-content-center mb-4">
+
         <instructionComponent></instructionComponent>
 
       </div>
@@ -85,15 +85,23 @@ export default {
 
 
 
+.bg-grey{
+  background-color: #C3C5C5;
+}
+.skills-part{
+  border-bottom: 4px solid $yellow;
+  
+}
 
 .title {
-    color: $yellow;
-    font-size: 40px;
-    text-align: center;
-    font-family: auto;
-    border-top: 4px solid $yellow;
-    // border-bottom: 1px solid $yellow;
+  color: $yellow;
+  font-size: 40px;
+  text-align: center;
+  font-family: auto;
+  // border-top: 4px solid $yellow;
+  // border-bottom: 1px solid $yellow;
 }
+
 .left-part {
   display: flex;
   align-items: center;
@@ -102,7 +110,7 @@ export default {
 }
 
 .img-profile {
-  width: 300px;
+  width: 250px;
 }
 
 .pres-part {

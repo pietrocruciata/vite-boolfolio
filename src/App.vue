@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <section class="d-flex flex-column">
+  <section class="d-flex flex-column min-vh-100">
     <header class="overflow">
 
       <div class=" d-flex justify-content-center bg-header gap-2">
@@ -36,7 +36,7 @@ export default {
           CRC
         </div>
 
-        <nav class="d-flex gap-2 gap-sm-5 align-items-center col-sm-8 justify-content-center">
+        <nav class="d-flex gap-4 gap-sm-5 align-items-center col-sm-8 justify-content-center">
 
           <RouterLink :class="$route.fullPath === '/' ? 'text-header rounded-top' : 'c-white'" :to="{ name: 'home' }">
             Home
@@ -46,25 +46,23 @@ export default {
             Miei
             Progetti
           </RouterLink>
-          <RouterLink
-            :class="$route.fullPath === '/contact' ? 'text-header rounded-top logo-size' : 'c-white logo-size'"
-            :to="{ name: 'contact' }">
-            <img src="/public/img/image.png" alt="">
+          
+          <div class="logo-size c-white d-flex flex-column align-items-center">
+            <div>
+              <a href="/public/img/Pietro.Cruciata.pdf" download="Pietro.Cruciata.pdf">
+                <img src="/public/img/image.png" alt="">
+              </a>
+            </div>
 
-          </RouterLink>
-          <!-- <div class="logo-size" @click="viewdocument()">
-    </div> -->
-          <!-- <div v-if="mostraImmagine" class="overlay d-flex flex-column align-items-center">
-      <img src="/public/img/Pietro.Cruciata.jpg" alt="" class="image-centered">
-      <span @click="viewdocument()" class="view-document ">CHIUDI </span>
+            <div class="download">Scarica cv</div>
 
-    </div> -->
-
+          </div>
+  
         </nav>
       </div>
     </header>
 
-    <main class="bg-darkblue">
+    <main class="bg-darkblue flex-grow-1 pb-3">
       <RouterView />
     </main>
 
@@ -78,6 +76,10 @@ export default {
 <style lang="scss" scoped>
 @use '../style/partials/palette' as *;
 @use '../style/general';
+
+.download {
+  width: max-content;
+}
 
 .view-document {
   margin: 5px;
@@ -129,22 +131,15 @@ export default {
   text-align: center;
   font-family: math;
 
-  // border-top: 4px solid $yellow;
-  // border-bottom: 1px solid $yellow;
-  // position: absolute;
-  // left: 6%;
 }
 
 .text-header {
 
   font-size: 20px;
-  // color: $blue;
-  // background-color: $yellow;
   color: $yellow;
   height: 100%;
   display: flex;
   align-items: center;
-  // width: 150px;
   justify-content: center;
 
 }
@@ -163,7 +158,7 @@ export default {
   overflow: hidden;
 }
 
-.bg-darkblue{
+.bg-darkblue {
   background-color: $darkblue;
 }
 </style>

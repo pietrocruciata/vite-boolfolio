@@ -54,7 +54,7 @@ export default {
 }
 
 .show{
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 10px;
   width: fit-content;
   padding: 5px;

@@ -46,7 +46,7 @@ const store = reactive({
                     })
 
                 }
-                console.log(this.viewProjects);
+                // console.log(this.viewProjects);
 
             })
                 .then(() => {
@@ -105,11 +105,11 @@ const store = reactive({
                 }
             }).then((response) => {
                 this.projectsingle = response.data;
-                console.log('response: ', this.projectsingle);
+                // console.log('response: ', this.projectsingle);
             }).then(() => {
                 store.octokit.request(`GET /repositories/${id}/languages`).then((res) => {
                     this.projectsingle['all_languages'] = Object.keys(res.data);
-                    console.log('ciaociaociao: ', this.projectsingle);
+                    // console.log('ciaociaociao: ', this.projectsingle);
                 })
             }).then(() => {
                 store.octokit.request(`GET /repositories/${id}/contents/${this.projectsingle.name}.png`, {
@@ -118,7 +118,7 @@ const store = reactive({
                     }
                 }).then((response) => {
                     this.projectsingle['image'] = response.data.download_url;
-                    console.log(this.projectsingle);
+                    // console.log(this.projectsingle);
                 })
             });
         }

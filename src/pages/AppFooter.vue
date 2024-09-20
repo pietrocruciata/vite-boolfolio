@@ -1,7 +1,7 @@
 <template>
 <footer class="footer bg-dark text-white py-4">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content-around">
 
         <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center ">
         <h5 class="title">Dove Sono</h5>
@@ -50,8 +50,8 @@ export default {};
 .social{
   width: 50px;
     &:hover {
-        transform: scale(1.05);
-        border-bottom: 1px solid $yellow;
+        transform: scale(1.07);
+        // border-bottom: 1px solid $yellow;
     }
 }
 .footer a:hover {
