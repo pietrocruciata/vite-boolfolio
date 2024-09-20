@@ -63,16 +63,16 @@ export default {
   data() {
     return {
       skills: [
-        '/public/img/css.png',
-        '/public/img/html.png',
-        '/public/img/php.png',
-        '/public/img/vue.png',
-        '/public/img/vite.png',
-        '/public/img/mysql.png',
-        '/public/img/js.png',
-        '/public/img/bootstrap.png',
-        '/public/img/laravel.png',
-        '/public/img/sass.png'
+        '/img/css.png',
+        '/img/html.png',
+        '/img/php.png',
+        '/img/vue.png',
+        '/img/vite.png',
+        '/img/mysql.png',
+        '/img/js.png',
+        '/img/bootstrap.png',
+        '/img/laravel.png',
+        '/img/sass.png'
       ]
     }
   }
