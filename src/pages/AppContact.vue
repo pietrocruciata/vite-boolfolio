@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <section class="bg-darkblue py-4">
         <div class="container">
             <div class="row justify-content-center">
@@ -45,4 +45,4 @@ export default {
     }
 
 }
-</style>
+</style> -->
