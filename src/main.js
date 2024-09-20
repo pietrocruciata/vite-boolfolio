@@ -23,7 +23,6 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import AppHome from './pages/AppHome.vue'
 import AppPortfolio from './pages/AppPortfolio.vue'
-import AppContact from './pages/AppContact.vue'
 import AppProject from './pages/AppProject.vue'
 
 
@@ -33,7 +32,6 @@ const router = createRouter({
 	routes: [
 		{ path: '/', name: 'home', component: AppHome },
 		{ path: '/portfolio', name: 'portfolio', component: AppPortfolio },
-		{ path: '/contact', name: 'contact', component: AppContact },
 		{ path: '/project/:id', name: 'project', component: AppProject }
 	],
 	scrollBehavior(to, from, savedPosition) {
