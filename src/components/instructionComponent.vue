@@ -17,7 +17,7 @@
             mai fermo , che non smette di <span class="important-text">Evolversi</span>, di stupirmi e di mettermi alla
             prova.
         </div>
-        <div class="view-document" @click="viewdocument()">
+        <div class="view-document my-2" @click="viewdocument()">
             Visualizza L'Attestato
         </div>
         <div v-if="mostraImmagine" class="overlay ">
