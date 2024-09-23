@@ -49,7 +49,7 @@ export default {
           
           <div class="logo-size c-white d-flex flex-column align-items-center">
             <div>
-              <a href="/public/img/Pietro.Cruciata.pdf" download="Pietro.Cruciata.pdf">
+              <a href="/img/Pietro.Cruciata.pdf" download="Pietro.Cruciata.pdf">
                 <img src="/public/img/image.png" alt="">
               </a>
             </div>
