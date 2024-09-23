@@ -19,7 +19,8 @@ const store = reactive({
 
             await store.octokit.request(`GET /user/repos?per_page=1000`, {
                 headers: {
-                    'X-GitHub-Api-Version': '2022-11-28'
+                    'X-GitHub-Api-Version': '2022-11-28',
+                    'Authorization': `token ${this.auth}`
                 }
             }).then((res) => {
                 this.projects = res.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
