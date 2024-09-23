@@ -33,7 +33,7 @@
       <div class="title py-3">
         Istruzione
       </div>
-      <div class="row justify-content-center mb-4">
+      <div class="row justify-content-center mb-4 p-3">
 
         <instructionComponent></instructionComponent>
 
