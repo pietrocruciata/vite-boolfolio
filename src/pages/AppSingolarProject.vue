@@ -2,7 +2,7 @@
     <section class="bg-darkblue">
         <div class="container">
             <div class="row ">
-                <RouterLink class="view-document " :to="{ name: 'portfolio' }">
+                <RouterLink class="view-document mx-5 my-2" :to="{ name: 'portfolio' }">
                     <img src="/public/img/arrow.png" alt="" class="back">
                 </RouterLink>
 
@@ -13,12 +13,12 @@
                     <img :src="store.data.projectsingle.image" alt="">
                 </div>
 
-                <div class="text-center my-3 description">
+                <div class="text-center my-3 description px-4 py-2">
                     {{ store.data.projectsingle.description }}
 
                 </div>
 
-                <div class="d-flex justify-content-around py-2 ">
+                <div class="d-flex justify-content-around p-2">
 
                     <div v-for="language in store.data.projectsingle.all_languages" class="languages">
                         {{ language }}

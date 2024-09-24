@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 // import router from './router'
 
-import App from './App.vue'
+import App from './pages/App.vue'
 
 // //INSTALL FONT AWESOM
 // import { library } from '@fortawesome/fontawesome-svg-core'
@@ -23,7 +23,7 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import AppHome from './pages/AppHome.vue'
 import AppPortfolio from './pages/AppPortfolio.vue'
-import AppProject from './pages/AppProject.vue'
+import AppSingolarProject from './pages/AppSingolarProject.vue'
 
 
 
@@ -32,7 +32,7 @@ const router = createRouter({
 	routes: [
 		{ path: '/', name: 'home', component: AppHome },
 		{ path: '/portfolio', name: 'portfolio', component: AppPortfolio },
-		{ path: '/project/:id', name: 'project', component: AppProject }
+		{ path: '/project/:id', name: 'project', component: AppSingolarProject }
 	],
 	scrollBehavior(to, from, savedPosition) {
 		if (savedPosition) {

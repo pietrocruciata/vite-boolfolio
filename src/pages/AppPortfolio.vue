@@ -16,19 +16,20 @@
             Crescita progetto dopo progetto.
           </div>
 
-          <div class="d-flex justify-content-around">
-            <div @click="previousPage" :disabled="currentPage === 1" class="bg-sand-botton m-3">indietro</div>
-            <span class="m-3 c-sand align-self-center description">Pagina {{ currentPage }} di {{ totalPages }}</span>
-            <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-sand-botton m-3">avanti</div>
-          </div>
+         
         </div>
       </div>
 
-      <div class=" d-flex gap-4 flex-wrap justify-content-center">
+      <div class=" d-flex gap-4 flex-wrap justify-content-center p-3">
         <ProjectCard v-for="(project, i) in currentProjects" :key="project.id" :item="project">
           {{ project.name }}
         </ProjectCard>
       </div>
+      <div class="d-flex justify-content-around">
+            <div @click="previousPage" :disabled="currentPage === 1" class="bg-sand-botton m-3">indietro</div>
+            <span class="m-3 c-sand align-self-center description">Pagina {{ currentPage }} di {{ totalPages }}</span>
+            <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-sand-botton m-3">avanti</div>
+          </div>
     </div>
   </div>
 </template>

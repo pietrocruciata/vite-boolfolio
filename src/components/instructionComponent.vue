@@ -5,7 +5,7 @@
         <img src="/public/img/boolean.png" alt="" class="animate__animated animate__fadeInLeft rounded-4">
     </div>
     <div class="col-lg-8 col-md-6 description align-self-center d-flex flex-column align-items-center ">
-        <div class="animate__animated animate__fadeInRight">
+        <div class="animate__animated animate__fadeInRight my-3">
             Con <span class="important-text">Boolean</span> ho piantato le mie fondamenta <span
                 class="important-text">Tech</span>, dove giorno dopo giorno miglioravo le mie <span
                 class="important-text">Skills</span> partendo completamente da 0, iniziando dal primo <span
@@ -17,7 +17,7 @@
             mai fermo , che non smette di <span class="important-text">Evolversi</span>, di stupirmi e di mettermi alla
             prova.
         </div>
-        <div class="view-document my-2" @click="viewdocument()">
+        <div class="view-document " @click="viewdocument()">
             Visualizza L'Attestato
         </div>
         <div v-if="mostraImmagine" class="overlay ">
