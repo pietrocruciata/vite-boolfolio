@@ -1,6 +1,6 @@
 <template>
 <footer class="footer bg-dark text-white py-4">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row justify-content-around">
 
         <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center ">

@@ -30,12 +30,12 @@ export default {
 </script>
 
 <template>
-  <section class="d-flex flex-column min-vh-100 w-100 size">
-    <header class="overflow">
+  <section class="d-flex flex-column min-vh-100 w-100  max-vw-100 overflow">
+    <header class="">
       <AppHeader />
     </header>
 
-    <main class="bg-darkblue flex-grow-1 pb-3 w-100">
+    <main class="bg-darkblue flex-grow-1 pb-3 ">
       <RouterView />
     </main>
 
@@ -50,9 +50,7 @@ export default {
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
-.size{
-  max-width: 100%;
-}
+
 
 .view-document {
   margin: 5px;
@@ -105,7 +103,8 @@ export default {
 }
 
 .overflow {
-  overflow: hidden;
+  overflow: auto;
+  max-width: 100vw;
 }
 
 .bg-darkblue {
