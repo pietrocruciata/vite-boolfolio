@@ -30,12 +30,12 @@ export default {
 </script>
 
 <template>
-  <section class="d-flex flex-column min-vh-100 w-100 ">
+  <section class="d-flex flex-column min-vh-100 w-100 size">
     <header class="overflow">
       <AppHeader />
     </header>
 
-    <main class="bg-darkblue flex-grow-1 pb-3">
+    <main class="bg-darkblue flex-grow-1 pb-3 w-100">
       <RouterView />
     </main>
 
@@ -50,7 +50,9 @@ export default {
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
-
+.size{
+  max-width: 100%;
+}
 
 .view-document {
   margin: 5px;

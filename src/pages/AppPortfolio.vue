@@ -8,10 +8,10 @@
 
     
     <div v-else>
-      <div class="container">
+      <div class="container-fluid ">
         <div class="row">
           <div
-            class="justify-content-center d-flex align-items-center description description-part animate__animated animate__fadeInLeft p-3">
+            class="justify-content-center d-flex align-items-center description description-part animate__animated animate__fadeInLeft px-5 py-2">
             Qui troverai alcuni dei miei Progetti ordinati per data di creazione, dove potrai quindi visionare la mia
             Crescita progetto dopo progetto.
           </div>
