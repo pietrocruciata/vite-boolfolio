@@ -3,19 +3,18 @@
     <div class="container">
       <div class="row py-4 ">
         <div class="col-lg-4 col-md-6 left-part ">
-          <img src="/public/img/fotoprofilointera.jpg" alt="" class="img-profile animate__animated animate__fadeInLeft rounded-4">
+          <img src="/public/img/fotoprofilointera.jpg" alt=""
+            class="img-profile animate__animated animate__fadeInLeft rounded-4">
         </div>
         <div class="col-lg-8 col-md-6 right-part animate__animated animate__fadeInRight">
           <h2 class="mt-3 name">Pietro Cruciata</h2>
           <h5 class="role">Jr Full-Stack Web Developer</h5>
           <div class="description mt-5">
-            <span class="important-text">Salve a tutti!</span> MI presento, sono Pietro ma puoi chiamarmi <span
-              class="important-text">Piero</span>. Un ragazzo siciliano attaccato alla propria terra con un forte
-            desiderio
-            di crescere in questo mondo lavorativo.
-            Fin dai tempi scolastici sono sempre stato attratto dalla matematica e dalla risoluzione di problemi che mi
-            hanno portato ad affacciarmi su questo settore lavorativo. Mi ritengo un tipo solare e simpatico, ma <span
-              class="important-text">Serio</span> e preciso allo stesso tempo.
+            <span class="important-text">Ciao a tutti!</span> Mi chiamo Pietro, ma potete chiamarmi <span class="important-text">Piero</span>. Sono un ragazzo siciliano, profondamente legato
+            alla mia terra e con una grande voglia di crescere professionalmente. Fin da quando ero studente, la mia
+            passione per la matematica e per la risoluzione di problemi mi ha portato a esplorare e a intraprendere un
+            percorso lavorativo in questo settore. Mi considero una persona solare e simpatica, ma al tempo stesso <span class="important-text">Seria</span>
+            e precisa.
           </div>
         </div>
       </div>
@@ -85,12 +84,13 @@ export default {
 
 
 
-.bg-grey{
+.bg-grey {
   background-color: #C3C5C5;
 }
-.skills-part{
+
+.skills-part {
   border-bottom: 4px solid $yellow;
-  
+
 }
 
 .title {

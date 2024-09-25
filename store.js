@@ -73,31 +73,6 @@ const store = reactive({
 
         },
 
-        // async fetchproject(i) {
-        //     await store.octokit.request(`GET /repositories/${this.viewProjects[i].id}`, {
-        //         // owner: 'pietrocruciata',
-        //         // repo: 'laravel-api',
-        //         headers: {
-        //             'X-GitHub-Api-Version': '2022-11-28'
-        //         }
-
-        //     }).then((res) => {
-
-        //         // console.log(res);
-        //         this.projectsingle = res.data
-
-        //     }).then(() => {
-        //         store.octokit.request(`GET /repos/${this.viewProjects[i].full_name.split('/')[0]}/${this.viewProjects[i].name}/languages`).then((res) => {
-        //             this.projectsingle['all_languages'] = Object.keys(res.data)
-
-
-
-        //             // // console.log(this.projectsingle);
-
-        //         })
-
-        //     })
-        // }
 
         async fetchproject(id) {
             await store.octokit.request(`GET /repositories/${id}`, {
