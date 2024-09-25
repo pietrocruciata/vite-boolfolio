@@ -58,12 +58,6 @@ export default {
             }
         }
     },
-
-    // mounted() {
-    //     // this.store.data.fetchproject(this.$route.params.id)
-
-
-    // },
     mounted() {
         if (this.store.data.projects.length > 0) {
             this.store.data.fetchproject(this.$route.params.id)
