@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-darkblue">
+    <section class="bg-darkblue d-flex justify-content-center">
         <div class="container">
             <div class="row ">
                 <RouterLink class="view-document mx-5 my-2" :to="{ name: 'portfolio' }">

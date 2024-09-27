@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <section class="d-flex flex-column min-vh-100 w-100  max-vw-100 overflow">
+  <section class="d-flex flex-column min-vh-100 w-100  overflow">
     <header class="">
       <AppHeader />
     </header>

@@ -1,19 +1,22 @@
-<template >
+<template>
 
-  <div class="card  col-md-3 b-sand">
-    <img :src="item.image" alt="" class="border-bottom">
+  <RouterLink :to="{ name: 'project', params: { id: item.id } }" class="card  col-md-3 b-sand">
+    <!-- <div class="card  col-md-3 b-sand"> -->
+      <img :src="item.image" alt="" class="border-bottom">
 
-    <div class="p-3 text-center">
-    <h4 class="card-title title mt-2 mb-1">
-      {{ item.name }}
-    </h4>
-        
-    <RouterLink :to="{ name: 'project', params: { id: item.id } }" class="show card-body">
+      <div class="p-3 text-center">
+        <h4 class="card-title title mt-2 mb-1">
+          {{ item.name }}
+        </h4>
+
+        <!-- <RouterLink :to="{ name: 'project', params: { id: item.id } }" class="show card-body">
+
       Visualizza il progetto
-    </RouterLink>
-    </div>
-   
-  </div>
+    </RouterLink> -->
+      </div>
+
+    <!-- </div> -->
+  </RouterLink>
 
 </template>
 
@@ -48,30 +51,29 @@ export default {
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
-.title{
+.title {
   color: $yellow;
   text-align: center;
 }
 
-.show{
+.show {
   font-size: 16px;
   border-radius: 10px;
   width: fit-content;
   padding: 5px;
   color: $darkblue;
   background-color: $yellow;
-  &:hover{
+
+  &:hover {
     color: white;
     background-color: $blue;
   }
 }
 
-.b-sand{
-  &:hover{
-    transform: scale(1.05); 
+.b-sand {
+  &:hover {
+    transform: scale(1.05);
     box-shadow: 0 8px 16px $yellow;
   }
 }
-
-
 </style>
