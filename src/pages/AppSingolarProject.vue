@@ -56,7 +56,16 @@ export default {
                     this.store.data.fetchproject(this.$route.params.id)
                 }
             }
-        }
+        },
+
+        'store.data.projectsingle'(newValue) {
+            const projectsids = this.store.data.projects.map(project => project.id)
+            if (!projectsids.includes(newValue.id)) {
+                this.$router.push({ name: 'home' })
+            }
+        },
+
+
     },
     mounted() {
         if (this.store.data.projects.length > 0) {
@@ -77,9 +86,9 @@ export default {
 
 
 .description {
-  color: white;
-  font-size: large;
-  text-align: center;
+    color: white;
+    font-size: large;
+    text-align: center;
 
 }
 
