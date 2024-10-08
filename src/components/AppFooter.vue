@@ -24,10 +24,6 @@
           <a href="https://www.linkedin.com/in/pietro-cruciata-7463a2258/" class="social me-3" target="_blank">
             <img src="/public/img/linkedin.png" alt="">
           </a>
-          <a href="https://instagram.com/piero_cruciata" class="social" target="_blank">
-            <img src="/public/img/instagram.png" alt="">
-            
-          </a>
           </div>
           
         </div>

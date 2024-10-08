@@ -1,18 +1,21 @@
 <template>
 
 
-    <div class="col-lg-4 col-md-6 text-center">
+    <div class="col-lg-4 col-md-6 text-center d-flex flex-colums justify-content-end">
         <img src="/public/img/boolean.png" alt="" class="animate__animated animate__fadeInLeft rounded-4">
     </div>
     <div class="col-lg-8 col-md-6 description align-self-center d-flex flex-column align-items-center ">
+        <div class="title">
+            Istruzione
+        </div>
         <div class="animate__animated animate__fadeInRight my-3">
             Con <span class="important-text">Boolean</span> ho gettato le basi del mio percorso <span
-            class="important-text">Tecnologico</span>, partendo da zero e migliorando ogni giorno le
-            mie competenze. Dal mio primo <span
-            class="important-text">"Hello World"</span>, sono arrivato a sviluppare applicazioni sempre più complesse.
+                class="important-text">Tecnologico</span>, partendo da zero e migliorando ogni giorno le
+            mie competenze. Dal mio primo <span class="important-text">"Hello World"</span>, sono arrivato a sviluppare
+            applicazioni sempre più complesse.
             Dopo anni di esplorazione in diversi settori, ho capito che questa è la strada che desidero seguire: un
-            mondo in continua <span
-            class="important-text">Evoluzione</span>, capace di sorprendermi e di mettermi costantemente alla prova.
+            mondo in continua <span class="important-text">Evoluzione</span>, capace di sorprendermi e di mettermi
+            costantemente alla prova.
 
         </div>
         <div class="view-document " @click="viewdocument()">
@@ -93,7 +96,7 @@ export default {
 
 .title {
     color: $yellow;
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
     font-family: auto;
 }

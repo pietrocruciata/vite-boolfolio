@@ -1,7 +1,6 @@
 <template>
 
   <RouterLink :to="{ name: 'project', params: { id: item.id } }" class="card  col-md-3 b-sand">
-    <!-- <div class="card  col-md-3 b-sand"> -->
       <img :src="item.image" alt="" class="border-bottom">
 
       <div class="p-3 text-center">
@@ -9,13 +8,8 @@
           {{ item.name }}
         </h4>
 
-        <!-- <RouterLink :to="{ name: 'project', params: { id: item.id } }" class="show card-body">
-
-      Visualizza il progetto
-    </RouterLink> -->
       </div>
 
-    <!-- </div> -->
   </RouterLink>
 
 </template>

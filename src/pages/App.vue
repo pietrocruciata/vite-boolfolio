@@ -35,7 +35,7 @@ export default {
       <AppHeader />
     </header>
 
-    <main class="bg-darkblue flex-grow-1 pb-3 ">
+    <main class="bg-darkblue flex-grow-1 pb-3">
       <RouterView />
     </main>
 

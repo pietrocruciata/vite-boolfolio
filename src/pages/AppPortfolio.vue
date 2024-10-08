@@ -1,12 +1,11 @@
-
 <template>
-  <div class="bg-darkblue py-3">
+  <div class="bg-darkblue pb">
 
     <div v-if="isLoading" class="loading-spinner">
       <p>Caricamento in corso...</p>
     </div>
 
-    
+
     <div v-else>
       <div class="container-fluid ">
         <div class="row">
@@ -16,7 +15,7 @@
             Crescita progetto dopo progetto.
           </div>
 
-         
+
         </div>
       </div>
 
@@ -25,11 +24,13 @@
           {{ project.name }}
         </ProjectCard>
       </div>
-      <div class="d-flex justify-content-around">
-            <div @click="previousPage" :disabled="currentPage === 1" class="bg-sand-botton m-3">indietro</div>
-            <span class="m-3 c-sand align-self-center description">Pagina {{ currentPage }} di {{ totalPages }}</span>
-            <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-sand-botton m-3">avanti</div>
-          </div>
+      <div class="d-flex justify-content-around position-relative">
+        <div @click="previousPage" :class="currentPage === 1 ? 'd-none' : ''" class="bg-sand-botton m-3 prev">indietro</div>
+        <span class="m-3 c-sand align-self-center description counter-page">Pagina {{ currentPage }} di {{ totalPages
+          }}</span>
+        <div @click="nextPage" :disabled="currentPage === totalPages" class="bg-sand-botton m-3 next"
+          :class="currentPage === totalPages ? 'd-none' : ''">avanti</div>
+      </div>
     </div>
   </div>
 </template>
@@ -45,7 +46,7 @@ export default {
   data() {
     return {
       store,
-      isLoading: true, 
+      isLoading: true,
       currentPage: 1,
       projectsPerPage: 6
     };
@@ -61,16 +62,16 @@ export default {
     }
   },
   mounted() {
-    
+
     this.loadProjects();
   },
   methods: {
     loadProjects() {
-      
+
       setTimeout(() => {
-        
+
         this.isLoading = false;
-      }, 2000); 
+      }, 2000);
     },
     nextPage() {
       if (this.currentPage < this.totalPages) {
@@ -90,6 +91,10 @@ export default {
 @use '../style/partials/palette' as *;
 @use '../style/general';
 
+
+.pb{
+  padding-bottom: 75px;
+}
 
 .loading-spinner {
   text-align: center;
@@ -129,6 +134,23 @@ export default {
 .description-part {
   font-size: 25px;
   border-bottom: 4px solid $yellow;
+
+}
+
+.counter-page {
+  position: absolute;
+  top: 6px;
+}
+
+.next {
+  position: absolute;
+  top: 6px;
+  right: 140px;
+}
+
+.prev {
+  position: absolute;
+  top: 6px;
+  left: 140px;
 }
 </style>
-
