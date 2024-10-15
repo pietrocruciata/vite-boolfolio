@@ -10,10 +10,12 @@
           <h2 class="mt-3 name">Pietro Cruciata</h2>
           <h5 class="role">Jr Full-Stack Web Developer</h5>
           <div class="description mt-5">
-            <span class="important-text">Ciao a tutti!</span> Mi chiamo Pietro, ma potete chiamarmi <span class="important-text">Piero</span>. Sono un ragazzo siciliano, profondamente legato
-            alla mia terra e con una grande voglia di crescere professionalmente. Fin da quando ero studente, la mia
+            <span class="important-text">Ciao a tutti!</span> Mi chiamo Pietro, ma potete chiamarmi <span
+              class="important-text">Piero</span>. Sono un ragazzo siciliano con una grande voglia di crescere
+            professionalmente. Fin da quando ero studente, la mia
             passione per la matematica e per la risoluzione di problemi mi ha portato a esplorare e a intraprendere un
-            percorso lavorativo in questo settore. Mi considero una persona solare e simpatica, ma al tempo stesso <span class="important-text">Seria</span>
+            percorso lavorativo in questo settore. Mi considero una persona solare e simpatica, ma al tempo stesso <span
+              class="important-text">Seria</span>
             e precisa.
           </div>
         </div>

@@ -10,7 +10,7 @@
       <div class="container-fluid ">
         <div class="row">
           <div
-            class="justify-content-center d-flex align-items-center description description-part animate__animated animate__fadeInLeft px-5 py-2">
+            class="justify-content-center d-flex align-items-center description description-part animate__animated animate__zoomIn px-5 py-2">
             Qui troverai alcuni dei miei Progetti ordinati per data di creazione, dove potrai quindi visionare la mia
             Crescita progetto dopo progetto.
           </div>
@@ -133,7 +133,7 @@ export default {
 
 .description-part {
   font-size: 25px;
-  border-bottom: 4px solid $yellow;
+  // border-bottom: 4px solid $yellow;
 
 }
 

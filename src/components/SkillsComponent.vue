@@ -20,11 +20,14 @@ export default {
 .skills-size{
     cursor: pointer;
     max-width: 80px;
+    
     &:hover{
     transform: scale(1.08); 
     // border-bottom: 1px solid $yellow;
     
   }
+
+
 }
 
 
