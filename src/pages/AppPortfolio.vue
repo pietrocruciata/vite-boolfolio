@@ -145,12 +145,12 @@ export default {
 .next {
   position: absolute;
   top: 6px;
-  right: 140px;
+  right: 6%;
 }
 
 .prev {
   position: absolute;
   top: 6px;
-  left: 140px;
+  left: 6%;
 }
 </style>

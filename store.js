@@ -77,7 +77,7 @@ const store = reactive({
         async fetchproject(id) {
             await store.octokit.request(`GET /repositories/${id}`, {
                 headers: {
-                    'X-GitHub-Api-Version': '2022-11-28' // Rimosso gli spazi extra
+                    'X-GitHub-Api-Version': '2022-11-28' 
                 }
             }).then((response) => {
                 this.projectsingle = response.data;
@@ -90,7 +90,7 @@ const store = reactive({
             }).then(() => {
                 store.octokit.request(`GET /repositories/${id}/contents/${this.projectsingle.name}.png`, {
                     headers: {
-                        'X-GitHub-Api-Version': '2022-11-28' // Rimosso gli spazi extra
+                        'X-GitHub-Api-Version': '2022-11-28' 
                     }
                 }).then((response) => {
                     this.projectsingle['image'] = response.data.download_url;
