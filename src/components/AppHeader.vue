@@ -131,6 +131,7 @@ export default {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    width: 70px;
 
     @media (max-width: 767px) {
         display: flex;
