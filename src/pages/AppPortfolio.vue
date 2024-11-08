@@ -12,7 +12,7 @@
           <div
             class="justify-content-center d-flex align-items-center description description-part animate__animated animate__zoomIn px-5 py-2">
             Qui troverai alcuni dei miei Progetti ordinati per data di creazione, dove potrai quindi visionare la mia
-            Crescita progetto dopo progetto.
+            Crescita .
           </div>
 
 

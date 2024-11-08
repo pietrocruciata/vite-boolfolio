@@ -109,7 +109,7 @@ export default {
 }
 
 .important-text {
-    font-size: 25px;
+    // font-size: 25px;
     color: $yellow;
 }
 </style>
