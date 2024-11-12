@@ -155,8 +155,8 @@ export default {
     position: absolute;
     left: 0;
     top: 111px;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: $blue;
+    // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 4px solid $yellow;
 
 }

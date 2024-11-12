@@ -3,13 +3,13 @@
     <div class="container-fluid">
       <div class="row justify-content-around">
 
-        <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center ">
+        <!-- <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center ">
           <h5 class="title mb-3">Dove Sono</h5>
           <div class="information">
             Alcamo (TP), 91011
 
           </div>
-        </div>
+        </div> -->
 
         <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center text-lg-left">
           <h5 class="title">Contattami</h5>
@@ -22,7 +22,7 @@
           <h5 class="title mb-3">Seguimi su</h5>
           <div class="d-flex justify-content-center gap-3">
             <a href="https://github.com/pietrocruciata" class="social me-3" target="_blank">
-              <img src="/public/img/github.png" alt="">
+              <img src="/public/img/githubnero.png" alt="">
             </a>
             <a href="https://www.linkedin.com/in/pietro-cruciata-7463a2258/" class="social me-3" target="_blank">
               <img src="/public/img/linkedin.png" alt="">
