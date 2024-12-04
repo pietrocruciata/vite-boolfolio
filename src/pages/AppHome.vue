@@ -65,12 +65,13 @@ export default {
         '/img/html.png',
         '/img/php.png',
         '/img/vue.png',
+        '/img/react.png',
         '/img/vite.png',
         '/img/mysql.png',
         '/img/js.png',
         '/img/bootstrap.png',
         '/img/laravel.png',
-        '/img/sass.png'
+        '/img/sass.png',
       ]
     }
   }
