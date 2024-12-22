@@ -29,7 +29,7 @@
     </SkillsComponent>
   </div>
   <section class="bg-darkblue">
-
+    
     <div class="container">
       <div class="row justify-content-around mb-4 p-3">
 
