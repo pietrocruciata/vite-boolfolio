@@ -24,7 +24,7 @@
 
             <div class="logo-size c-white d-flex flex-column align-items-center">
                 <div>
-                    <a href="/img/Pietro.Cruciata.pdf" download="Pietro.Cruciata.pdf" target="_blank">
+                    <a href="/img/Pietro_Cruciata.pdf" download="Pietro_Cruciata.pdf" target="_blank">
                         <!-- <img src="/public/img/image.png" alt=""> -->
                         <div class="download">Scarica cv</div>
                     </a>

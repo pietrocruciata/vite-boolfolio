@@ -13,7 +13,7 @@
 
         <div class="col-lg-3 col-md-3 mb-3 mb-lg-0 text-center text-lg-left">
           <h5 class="title">Contattami</h5>
-          <p> <a href="mailto:cruciata9748@gmail.com" class="social information">Cruciata9748@gmail.com</a></p>
+          <p> <a href="mailto:cruciata.pietro@icloud.com" class="social information">cruciata.pietro@icloud.com</a></p>
           <p> <a href="tel:+393393132363" class="social information">+39 3393132363</a></p>
         </div>
 
