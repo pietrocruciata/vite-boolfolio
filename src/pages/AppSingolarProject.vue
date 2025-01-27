@@ -120,6 +120,7 @@ export default {
     border-radius: 20px;
     text-align: center;
     width: 100px;
+    transition: transform 0.8s ease-in-out, box-shadow 0.5s ease-in-out;
 
 
     &:hover {
@@ -137,9 +138,10 @@ export default {
     cursor: pointer;
     width: fit-content;
     border-radius: 20px;
+    transition: transform 0.8s ease-in-out, box-shadow 0.5s ease-in-out;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.06);
         box-shadow: 0 8px 16px $yellow;
     }
 

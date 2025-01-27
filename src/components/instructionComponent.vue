@@ -1,13 +1,13 @@
 <template>
 
 
-    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+    <!-- <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
         <img src="/public/img/boolean.png" alt="" class="animate__animated animate__fadeInLeft rounded-4">
-    </div>
+    </div> -->
     <div class="col-lg-8 col-md-6 description align-self-center d-flex flex-column align-items-center ">
-        <div class="title">
+        <!-- <div class="title">
             Istruzione
-        </div>
+        </div> -->
         <div class="animate__animated animate__fadeInRight my-3">
             Con <span class="important-text">Boolean</span> ho gettato le basi del mio percorso <span
                 class="important-text">Tecnologico</span>, partendo da zero e migliorando ogni giorno le
@@ -86,6 +86,7 @@ export default {
     cursor: pointer;
     width: fit-content;
     border-radius: 20px;
+    transition: transform 0.4s ease-in-out, ;
 
     &:hover {
         transform: scale(1.05);

@@ -65,8 +65,9 @@ export default {
 }
 
 .b-sand {
+  transition: transform 0.8s ease-in-out, box-shadow 0.5s ease-in-out;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
     box-shadow: 0 8px 16px $yellow;
   }
 }

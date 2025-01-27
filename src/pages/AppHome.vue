@@ -10,7 +10,7 @@
           <h2 class="mt-3 name">Pietro Cruciata</h2>
           <h5 class="role">Jr Full-Stack Web Developer</h5>
           <div class="description mt-5">
-            <span class="important-text">Ciao a tutti!</span> Mi chiamo Pietro, ma potete chiamarmi <span
+            <span class="important-text">Ciao!</span> Mi chiamo Pietro, ma potete chiamarmi <span
               class="important-text">Piero</span>. Sono un ragazzo siciliano con una grande voglia di crescere
             professionalmente. Fin da quando ero studente, la mia
             passione per la matematica e per la risoluzione di problemi mi ha portato a esplorare e a intraprendere un
@@ -23,13 +23,21 @@
     </div>
   </section>
 
-  <div class=" d-flex gap-5 p-3 justify-content-center flex-wrap skills-part animate__animated animate__fadeIn bg-grey">
-    <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill">
+  <section class="">
 
-    </SkillsComponent>
-  </div>
-  <section class="bg-darkblue">
-    
+
+
+    <div class="d-flex gap-5 p-4 justify-content-center flex-wrap skills-part animate__animated animate__fadeIn ">
+      <SkillsComponent v-for="(skill, i) in skills" :key="i" :item="skill">
+
+      </SkillsComponent>
+    </div>
+  </section>
+
+
+
+  <section class="">
+
     <div class="container">
       <div class="row justify-content-around mb-4 p-3">
 
@@ -40,7 +48,6 @@
     </div>
 
   </section>
-
 
 
 
@@ -61,17 +68,51 @@ export default {
   data() {
     return {
       skills: [
-        '/img/css.png',
-        '/img/html.png',
-        '/img/php.png',
-        '/img/vue.png',
-        '/img/react.png',
-        '/img/vite.png',
-        '/img/mysql.png',
-        '/img/js.png',
-        '/img/bootstrap.png',
-        '/img/laravel.png',
-        '/img/sass.png',
+        {
+          img: '/img/css.png',
+          name: 'css'
+        },
+        {
+          img:'/img/html.png',
+          name: 'html'
+        },
+        {
+          img:'/img/php.png',
+          name: 'php'
+        },
+        {
+          img:'/img/vue.png',
+          name: 'Vue'
+        },
+        {
+          img:'/img/react.png',
+          name: 'React'
+        },
+        {
+          img:'/img/vite.png',
+          name: 'Vite'
+        },
+        {
+          img:'/img/mysql.png',
+          name: 'Mysql'
+        },
+        {
+          img:'/img/js.png',
+          name: 'Javascript'
+        },
+        {
+          img:'/img/bootstrap.png',
+          name: 'Bootstrap'
+        },
+        {
+          img:'/img/laravel.png',
+          name: 'Laravel'
+        },
+        {
+          img:'/img/sass.png',
+          name: 'Sass'
+        },
+
       ]
     }
   }
@@ -89,7 +130,7 @@ export default {
 }
 
 .skills-part {
-  border-bottom: 4px solid $yellow;
+  // border-bottom: 4px solid $yellow;
 
 }
 
